@@ -1,0 +1,220 @@
+@media screen and (max-height: 800px) and (min-width: 1050px) {
+  .mainDiv {
+    padding-top: 3% !important;
+  }
+  .mb-4 {
+    margin-bottom: 1.2rem !important;
+  }
+}
+
+.errorMsg {
+  color: red;
+  padding-left: 10%;
+  padding-top: 1%;
+}
+
+.text {
+  text-align: center;
+}
+.modal-fullscreen .modal-body {
+  overflow: hidden;
+}
+
+.modal-content {
+  background: url("src/assets/common/kumar-bg.png") !important;
+  background-size: 100%;
+  background-blend-mode: soft-light;
+}
+
+li,
+input {
+  font-family: "metropolis";
+  padding-left: 5%;
+}
+
+.form-label {
+  font-family: "metropolis";
+  padding-left: 5%;
+}
+
+.modal-headding {
+  color: var(--primary, #f27f0c);
+  font-family: Alido;
+  font-size: 3.7vw;
+  font-style: normal;
+  font-weight: 600;
+}
+.close-btn {
+  position: absolute;
+  top: 5%;
+  right: 8.7%;
+}
+.modal-text {
+  color: #000;
+  font-family: Metropolis;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 500;
+  width: 85%;
+}
+
+.form-outline input {
+  border-radius: 100px;
+  border: 1px solid rgba(1, 18, 26, 0.5);
+  background: var(--secondary, #faf6f0);
+
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.submit-form {
+  border-radius: 100px;
+  background: var(--primary, #f27f0c);
+  flex-shrink: 0;
+  padding: 0.9rem 4.5rem;
+  color: var(--secondary, #faf6f0);
+  text-align: center;
+  font-family: Metropolis;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 4%;
+}
+.titleDiv {
+  margin-bottom: 3%;
+}
+.mainDiv {
+  padding-top: 3%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+@media screen and (max-width: 767px) {
+  .mainDiv {
+    padding-top: 8.5%;
+    left: 37%;
+    transform: translate(-30%, -50%);
+  }
+  .submit-form {
+    font-size: 3vw;
+  }
+  .text {
+    margin-left: 2%;
+    margin-bottom: 6%;
+  }
+  .titleDiv {
+    margin-bottom: 0;
+  }
+  .modal-text {
+    font-size: 2.2vw;
+  }
+  .modal-headding {
+    font-size: 5.4vw;
+  }
+  .close-btn {
+    position: absolute;
+    top: 3%;
+    right: 8.7%;
+    width: 7%;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .close-btn {
+    position: absolute;
+    top: 3%;
+    right: 8.7%;
+    width: 11% !important;
+  }
+  .form-label {
+    font-size: 3.25vw !important;
+  }
+  .mainDiv {
+    left: 28%;
+    transform: translate(-17%, -50%);
+  }
+  .dropdown__filter-selected {
+    font-size: 0.75rem !important;
+  }
+  .form-control {
+    font-size: 0.75rem !important;
+  }
+  .modal-headding {
+    font-size: 7.4vw !important;
+  }
+}
+
+#filter-switch-project:checked + .dropdown__select {
+  transform: scaleY(1);
+}
+#filter-switch-project:checked
+  + .dropdown__options-filter
+  .dropdown__filter:after {
+  transform: rotate(-135deg);
+}
+.dropdown__options-filter {
+  width: 100%;
+  cursor: pointer;
+}
+.dropdown__filter {
+  position: relative;
+  display: flex;
+  padding: 17.5px;
+  color: #595959;
+  background: var(--secondary, #faf6f0);
+  border: 1px solid #a09c9c;
+  border-radius: 30px;
+
+  transition: 0.3s;
+  list-style: none;
+}
+.dropdown__filter:focus {
+  border: 1px solid #918ff4;
+  outline: none;
+  box-shadow: 0 0 5px 3px #918ff4;
+}
+.dropdown__filter::after {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #595959;
+  border-bottom: 2px solid #595959;
+  transform: rotate(45deg) translateX(-45%);
+  transition: 0.2s ease-in-out;
+}
+.dropdown__select {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  height: 14.7vw;
+  margin-top: 5px;
+  overflow: scroll;
+  transform: scaleY(0);
+  transform-origin: top;
+  font-weight: 300;
+  transition: 0.2s ease-in-out;
+  border-radius: 50px;
+
+  background: var(--secondary, #faf6f0);
+}
+.dropdown__select-option {
+  padding: 20px;
+  background: var(--secondary, #faf6f0);
+  border-bottom: 1px solid #d6d6d6;
+  transition: 0.3s;
+  text-align: center;
+}
+.dropdown__select-option:last-of-type {
+  border-bottom: 0;
+}
+.dropdown__select-option:hover {
+  background-color: #f9f9f9;
+}

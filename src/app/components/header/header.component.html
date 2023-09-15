@@ -1,0 +1,171 @@
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="container-fluid justify-content-end">
+    <div class="menu-icon">
+      <img src="assets/header/menu-icon.svg" alt="" data-bs-toggle="modal" data-bs-target="#menu" />
+    </div>
+
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/common/newKumarIcon.png" alt="" />
+    </a>
+
+    <div class="allSocialIcons d-flex">
+      <div title="Play Store" class="icon">
+        <a href="https://play.google.com/store/search?q=kumar+properties&c=apps&hl=en-IN" target="_blank">
+          <img src="assets/header/google-play.svg" alt="" /></a>
+      </div>
+      <div title="Call" class="icon">
+        <a href="tel:9595110011" target="_blank">
+          <img src="assets/icons/call.svg" alt="" /></a>
+      </div>
+      <div title="Youtube" class="icon">
+        <a href="https://www.youtube.com/channel/UCSfnHQmlu8aEC64uXm9npIQ" target="_blank">
+          <img src="assets/header/youtube.svg" alt="" /></a>
+      </div>
+      <div title="Instagram" class="icon">
+        <a href="https://instagram.com/kumarproperties" target="_blank">
+          <img src="assets/header/instagram.svg" alt="" /></a>
+      </div>
+      <div title="Facebook" class="icon">
+        <a href="https://www.facebook.com/kumarpropertiespune" target="_blank">
+          <img src="assets/header/facebook.svg" alt="" /></a>
+      </div>
+      <div title="Twitter" class="icon">
+        <a href="https://twitter.com/Kumarproperties" target="_blank">
+          <img src="assets/header/Twitter2.png" alt="" /></a>
+      </div>
+      <div title="Linkedin" class="icon">
+        <a href="https://www.linkedin.com/company/kumar-properties?trk=biz-companies-cym" target="_blank">
+          <img src="assets/header/linkedin.svg" alt="" /></a>
+      </div>
+    </div>
+
+    <div>
+      <div class="line"></div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item" (click)="onTabClick('home')" [ngClass]="{'active': activeTab ==='home'}">
+            <a routerLink="/" class="nav-link">Home</a>
+          </li>
+          <li (click)="onTabClick('about')" [ngClass]="{'active': activeTab ==='about'}" class="nav-item">
+            <a class="nav-link " aria-current="page" routerLink="about-us">about us</a>
+          </li>
+          <li (click)="onTabClick('projects')" [ngClass]="{'active': activeTab ==='projects'}" class="nav-item">
+            <a class="nav-link" routerLink="/projects">projects</a>
+          </li>
+          <li (click)="onTabClick('media')" [ngClass]="{'active': activeTab ==='media'}" class="nav-item">
+            <a class="nav-link" routerLink="/media">media</a>
+          </li>
+          <li (click)="onTabClick('testimonials')" [ngClass]="{'active': activeTab ==='testimonials'}" class="nav-item">
+            <a class="nav-link" routerLink="/testimonials">testimonials</a>
+          </li>
+          <li (click)="onTabClick('careers')" [ngClass]="{'active': activeTab ==='careers'}" class="nav-item">
+            <a class="nav-link" routerLink="/careers">careers</a>
+          </li>
+          <li (click)="onTabClick('contact')" [ngClass]="{'active': activeTab ==='contact'}" class="nav-item">
+            <a class="nav-link" routerLink="/contact">contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MENU ICONS  -->
+<!-- Modal -->
+<div class="modal top" id="menu" tabindex="-1" aria-labelledby="menu" aria-hidden="true" data-bs-backdrop="true"
+  data-bs-keyboard="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content text-white">
+      <div class="modal-body custom-modal-body">
+        <div class="row h-100">
+          <div class="col-xl-4 col-lg-4 col-sm-12 col-xs-12 col-md-4 give-space overflow-hidden"
+            style="position: relative;">
+            <div class="d-flex close-container" style="align-items: center;">
+              <button type="button" class="close-btn" data-bs-dismiss="modal">
+                <img src="assets/header/cross.png" alt="" />
+              </button>
+              <div class="text" style="overflow: hidden; margin-left: 4%;">
+                <span class="animate-header">Hope you are having a good day!</span>
+              </div>
+            </div>
+            <div class="quickLinks">
+              <div style="overflow: hidden">
+                <div class="col-xl-6 col-sm-12 col-xs-12 animate-options">
+                  <h1>
+                    <a routerLink="/" data-bs-dismiss="modal">Home</a>
+                  </h1>
+
+                </div>
+              </div>
+              <div style="overflow: hidden">
+                <div class="col-xl-6 col-sm-12 col-xs-12 animate-options">
+                  <h1>
+                    <a routerLink="/projects" data-bs-dismiss="modal">Projects</a>
+                  </h1>
+
+                </div>
+              </div>
+              <div style="overflow: hidden">
+                <div class="col-xl-6 col-sm-12 col-xs-12 animate-options">
+                  <h1>
+                    <a routerLink="/about-us" data-bs-dismiss="modal">About Us</a>
+                  </h1>
+
+                </div>
+              </div>
+              <div style="overflow: hidden">
+                <div class="col-xl-6 col-sm-12 col-xs-12 animate-options">
+                  <h1>
+                    <a routerLink="/media" data-bs-dismiss="modal">Media</a>
+                  </h1>
+
+                </div>
+              </div>
+
+              <div style="overflow: hidden">
+                <div class="col-xl-6 col-sm-12 col-xs-12 animate-options">
+                  <h1>
+                    <a routerLink="/testimonials" data-bs-dismiss="modal">testimonials</a>
+                  </h1>
+
+                </div>
+              </div>
+
+              <div style="overflow: hidden">
+                <div class="col-xl-6 col-sm-12 col-xs-12 animate-options">
+                  <h1><a routerLink="/blogs-listing" data-bs-dismiss="modal"> BLOGS</a></h1>
+
+                </div>
+              </div>
+              <div style="overflow: hidden">
+                <div class="col-xl-6 col-sm-12 col-xs-12 animate-options">
+                  <h1>
+                    <a routerLink="/nri-corner" data-bs-dismiss="modal">NRI CORNER</a>
+                  </h1>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links" style="overflow: hidden">
+              <div class="contact contact-words">
+                <a routerLink="/contact" data-bs-dismiss="modal" class="text-contact">
+                  <span class="animate-icons">Contact us</span>
+                </a>
+              </div>
+              <div class="contact contact-words" style="overflow: hidden">
+                <a routerLink="/careers" data-bs-dismiss="modal" class="text-contact">
+                  <span class="animate-icons">Careers</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-xl-8 col-lg-8 col-sm-12 col-xs-12 col-md-8 hamburger-img">
+            <img src="assets/header/KumarNewMenu.jpg" alt="" class="img-fluid h-100" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

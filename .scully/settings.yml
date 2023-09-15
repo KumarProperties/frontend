@@ -1,0 +1,11 @@
+identifier: l7l1necdc0a898k6
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: kumar-world-frontend
+homeFolder: C:\Users\Ayush\Desktop\scullyTrial\kumar-world-frontend
+distFolder: dist/kumar-world-frontend
+outDir: C:\Users\Ayush\Desktop\scullyTrial\kumar-world-frontend\dist\static\
+handle404: ''
+allowErrorCollect: true

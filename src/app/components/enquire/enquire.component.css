@@ -1,0 +1,62 @@
+.allButons {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: -10rem;
+  bottom: 5.7rem;
+  z-index: 999;
+}
+
+.callIcon {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.callIcon img {
+  width: 55px;
+}
+.chattBotIcon {
+  z-index: 99;
+  cursor: pointer;
+}
+.chatIcon {
+  background: transparent;
+  border: none;
+}
+.enquireNowbtn {
+  background: #f27f0c;
+  border-radius: 100px;
+  color: #faf6f0;
+  padding: 0.7rem 2.8rem;
+  cursor: pointer;
+  z-index: 999;
+  width: fit-content;
+  z-index: 999;
+  transform: rotate(90deg) translate(-53%, 186%);
+}
+@media (max-width: 767px) {
+  .callIcon img {
+    max-width: 45px;
+  }
+  .chattBotIcon img {
+    max-width: 45px;
+  }
+  .enquireNowbtn {
+    color: #faf6f0;
+    padding: 0.6rem 1.8rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transform: rotate(90deg) translate(-65%, 166%);
+  }
+  .allButons {
+    right: -7.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .allButons {
+    /* right: -5.5rem;
+    bottom: 6rem; */
+
+    right: -8.5rem;
+  }
+}

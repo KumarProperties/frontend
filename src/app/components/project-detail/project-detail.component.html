@@ -1,0 +1,652 @@
+<div class="margins" style="margin-left: 9%;">
+  <div class="buttonDiv" style="margin-top: 3%">
+    <a routerLink="/projects">
+      <img class="back" src="../../../assets/blogs/backBtn.png" alt="" />
+    </a>
+  </div>
+</div>
+
+<div class="detail-page">
+  <div class="p-0">
+    <div class="row d-flex topDiv position-relative">
+      <div class="col-lg-5 col-xl-5 carouselText ">
+        <!-- <div class="imageLogo">
+          <img [src]="projectData.logo" alt="" />
+        </div> -->
+
+        <div class="title-wrapper overflow-hidden">
+          <h1>
+            {{ projectData?.title }}
+          </h1>
+        </div>
+        <div class="bannerText-wrapper">
+          <span class="bannerText d-block">{{ projectData?.sub_title }} </span>
+        </div>
+
+        <div class="flat-size">
+          <div *ngIf="projectData?.tags && projectData?.tags[0]" class="project-tags twoBhk ">
+            <ul class="my-auto">
+              <li>{{ projectData?.tags && projectData?.tags[0] }}</li>
+            </ul>
+          </div>
+          <div *ngIf="projectData?.tags && projectData?.tags[1] && projectData?.tags[1] != 'Contact Us For Pricing'" class="project-tags threeBhk ">
+            <ul class="my-auto">
+              <li>{{projectData?.tags && projectData?.tags[1] }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="carousel col-lg-7 col-xl-7 d-flex overflow-hidden" style="margin-top: 3%;">
+        <div class="swiper titleSwiper">
+          <div class="swiper-wrapper">
+
+
+            <div *ngFor="let bannerImage of projectData?.title_image" class="swiper-slide titleImgsDiv">
+             <img  [src]="bannerImage" alt="" />
+            </div>
+
+          </div>
+
+        </div>
+        <!-- <div class="swiper-pagination"></div> -->
+      </div>
+    </div>
+
+    <div class="littleDetail px-0">
+      <div class="details-wrapper">
+
+        <div class="container-fluid mt-5">
+          <div class=" detail-para justify-content-between">
+            <div class=" setText px-0 pe-lg-3">
+
+              <span *ngFor="let sentence of sentencesArray.slice(0, 5);">
+
+
+                {{ sentence }}<span>. </span>
+
+              </span>
+            </div>
+            <div style="margin-top: 2%;" class=" setText px-0 ">
+
+              <span *ngFor="let sentence of sentencesArray.slice(5); ">
+
+
+
+                {{ sentence }}<span>. </span>
+
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="mt-3 ModernTechContainer">
+      <div>
+        <div>
+          <div class="DetailContainer">
+            <div *ngIf=" projectData?.tech_stack?.title " class="title-wrapper overflow-hidden">
+              <h3 class="my-xxl-2 pb-4 pb-xxl-5">
+                {{ projectData?.tech_stack?.title }}
+              </h3>
+            </div>
+            <div *ngIf="projectData?.tech_stack?.description"
+              class=" indetail-wrapper justify-content-between overflow-hidden">
+              <div class="  setText pe-lg-3 InDetail">
+                <span *ngFor="let sentence of techStackArray.slice(0, 5 );">
+
+
+                  {{ sentence }}<span>. </span>
+                </span>
+              </div>
+
+
+              <div class=" setText col-xl-6   InDetail">
+                <span *ngFor="let sentence of techStackArray.slice(5 );">
+
+
+                  {{ sentence }}<span>. </span>
+
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngIf="projectData?.city_name != 'Bengaluru'" class="mahaReraDiv mb-3">
+      <div class="animate-mahaTitle" style="overflow: hidden;">
+        <div class="mahaReraTitle d-flex">
+          <img src="../../../assets/icons/mahaReraIcon2.png" alt="">
+          <span>Maha Rera</span>
+        </div>
+      </div>
+      <div class="animate-mahaText" style="overflow: hidden;">
+        <div class="mahaText">
+          <span><strong>The project has been registered via MahaRERA registration number:</strong></span> <br>
+          <span>{{projectData?.certification?.description}} are available on the website <a class="mahaLink"
+              href="http://maharera.mahaonline.gov.in" target="_blank"
+              rel="noopener noreferrer">maharera.mahaonline.gov.in</a> under registered projects.</span>
+        </div>
+      </div>
+      <div *ngIf="projectData?.certification?.qr_images[0]" class="row qrDiv"
+        style="padding: 0 3%; margin-top: 5%; justify-content: center;">
+        <div class="col-lg-3 col-md-3 col-sm-6  qrs">
+          <div class="d-flex mb-3">
+            <span>Member of &nbsp; &nbsp;</span>
+            <img style="width: 60%;" src="../../../assets/icons/credai.png" alt="">
+          </div>
+          <div class="d-flex">
+            <span>IGBC Certified</span>
+            <img style="width: 67%;" src="../../../assets/icons/igbc.png" alt="">
+          </div>
+        </div>
+        <div *ngFor="let qrImage of projectData?.certification?.qr_images"
+          class="col-lg-3 col-md-3 col-sm-6 qrdiv  qrs">
+          <img [src]="qrImage" alt="">
+        </div>
+
+
+      </div>
+    </div>
+
+    <div *ngIf="projectData?.city_name == 'Bengaluru'" class="mahaReraDiv mb-3">
+      <div class="animate-mahaTitle" style="overflow: hidden;">
+        <div class="mahaReraTitle d-flex">
+          <img src="../../../assets/icons/karnaRera.png" alt="">
+          <span>Karnataka Rera</span>
+        </div>
+      </div>
+      <div class="animate-mahaText" style="overflow: hidden;">
+        <div class="mahaText">
+          <span><strong>The project has been registered via KarnatakaRERA registration number: </strong></span> <br>
+          <span>{{projectData?.certification?.description}} are available on the website <a class="mahaLink"
+              href="http://rera.karnataka.gov.in " target="_blank" rel="noopener noreferrer">rera.karnataka.gov.in </a>
+            under registered projects.</span>
+        </div>
+      </div>
+      <div *ngIf="projectData?.certification?.qr_images[0]" class="row qrDiv"
+        style="padding: 0 3%; margin-top: 5%; justify-content: center;">
+        <div class="col-lg-3 col-md-3 col-sm-6  qrs">
+          <div class="d-flex mb-3">
+            <span>Member of &nbsp; &nbsp;</span>
+            <img style="width: 60%;" src="../../../assets/icons/credai.png" alt="">
+          </div>
+          <div class="d-flex">
+            <span>IGBC Certified</span>
+            <img style="width: 67%;" src="../../../assets/icons/igbc.png" alt="">
+          </div>
+        </div>
+        <div *ngFor="let qrImage of projectData?.certification?.qr_images"
+          class="col-lg-3 col-md-3 col-sm-6 qrdiv  qrs">
+          <img [src]="qrImage" alt="">
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div
+      *ngIf="projectData?.flat_view?.walk_through || projectData?.flat_view?.flat_view_360 || projectData?.flat_view?.live_view"
+      class="mt-5">
+      <div class="wk-content wrapper">
+        <div class="tabs_wrap">
+          <ul
+            [ngStyle]="{'grid-template-columns' : projectData?.flat_view?.flat_view_360 && projectData?.flat_view?.walk_through && projectData?.flat_view?.live_view ? '1fr 1fr 1fr' : projectData?.flat_view?.flat_view_360 && projectData?.flat_view?.walk_through || projectData?.flat_view?.flat_view_360 && projectData?.flat_view?.live_view || projectData?.flat_view?.live_view && projectData?.flat_view?.walk_through ?  '1fr 1fr' : '1fr'}">
+            <li *ngIf="projectData?.flat_view?.walk_through" (click)="selectTab('walkthrough')"
+              [ngClass]="{ active: selectedTab === 'walkthrough' }" data-tabs="walkthrough">
+              Walkthrough
+            </li>
+            <li *ngIf="projectData?.flat_view?.flat_view_360" (click)="selectTab('flat360')"
+              [ngClass]="{ active: selectedTab === 'flat360' }" data-tabs="flat360">
+              Flat 360 view
+            </li>
+            <li *ngIf="projectData?.flat_view?.live_view" (click)="selectTab('live')"
+              [ngClass]="{ active: selectedTab === 'live' }" data-tabs="live">
+              For live view
+            </li>
+          </ul>
+          <div class="container-xl px-0 mt-5">
+            <div *ngIf="selectedTab === 'walkthrough'" class="content">
+              <div class="walkthrough ">
+                <iframe [src]="walkthroughVideo" width="100%" height="500px" class="cursor--pointer " frameborder="0"
+                  controls>
+                </iframe>
+
+                <p>{{projectData?.title}} Walkthrough</p>
+              </div>
+            </div>
+            <div *ngIf="selectedTab === 'flat360'" class="content">
+              <iframe width="100%" height="500px" frameborder="0" [src]="flat360video"></iframe>
+            </div>
+            <div *ngIf="selectedTab === 'live'" class="content">
+              <iframe width="100%" height="500px" frameborder="0" [src]="liveVideo"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="projectData?.flat_details?.amenities?.bulleting[0] ||  projectData?.flat_details?.specification?.bulleting[0] ||  projectData?.flat_details?.isometric_view.media[0] " class=" px-0 mt-5 ammentiesPositonsContainer">
+      <div class="wrapper">
+        <div class="tabs_wrap Ammenties">
+          <ul
+           [ngStyle]="{'grid-template-columns' : projectData?.flat_details?.amenities?.bulleting[0] &&  projectData?.flat_details?.specification?.bulleting[0] &&  projectData?.flat_details?.isometric_view.media[0]  ? '1fr 1fr 1fr' : projectData?.flat_details?.amenities?.bulleting[0] && projectData?.flat_details?.specification?.bulleting[0] || projectData?.flat_details?.amenities?.bulleting[0] && projectData?.flat_details?.isometric_view.media[0] || projectData?.flat_details?.isometric_view.media[0] && projectData?.flat_details?.specification?.bulleting[0] ? '1fr 1fr' : '1fr'}"
+
+            >
+            <li *ngIf="projectData?.flat_details?.amenities?.bulleting[0]" (click)="tabSelected('ammenties')"
+              [ngClass]="{ active: tab_selected === 'ammenties' }" data-tabs="ammenties">
+              Amenities
+            </li>
+            <li *ngIf="projectData?.flat_details?.specification?.bulleting[0]" (click)="tabSelected('flat360')" [ngClass]="{ active: tab_selected === 'flat360' }" data-tabs="flat360">
+              Specifications
+            </li>
+            <li *ngIf="projectData?.flat_details?.isometric_view.media[0]" (click)="tabSelected('live')" [ngClass]="{ active: tab_selected === 'live' }" data-tabs="live">
+              Floor Plan
+            </li>
+          </ul>
+
+          <div class=" mt-3">
+            <div *ngIf="tab_selected === 'ammenties'" class="content">
+              <div class="row ammentiesAcordian" style="justify-content: center;">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="swiper amenities-swiper">
+                    <div class="swiper-wrapper">
+                      <div *ngFor="let images of projectData?.flat_details.amenities.images" class="swiper-slide">
+                        <div class="accordion-main-img">
+                          <img [src]="images" alt="" />
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                  </div>
+                  <div class="swipe-next"><img style="transform: rotate(180deg);"
+                      src="../../../assets/icons/navigationIcon.png" alt=""></div>
+                  <!-- <div class="swiper-pagination"></div> -->
+                  <div class="swipe-prev"><img src="../../../assets/icons/navigationIcon.png" alt=""></div>
+                  <!-- <div  class="AccordianImgs position-relative">
+
+                    <div class="accordion-main-img">
+                      <img [src]="projectData.flat_details.amenities.top_image" alt="" />
+                    </div>
+                    <div class="smallImg ammenImg2">
+                      <img [src]="projectData.flat_details.amenities.bottom_image" alt="" />
+                    </div>
+                  </div> -->
+                </div>
+                <div class="amenities-ac col-lg-6 col-md-6 col-sm-12">
+                  <div class="Accordian accordion" id="accordionExample">
+                    <div style="max-height: 80vh; overflow-y: scroll;">
+                      <div class="accordion-item"
+                        *ngFor="let amenities of projectData?.flat_details?.amenities?.bulleting; let i = index">
+                        <h2 class="accordion-header" [id]="'heading' + i">
+                          <button class="accordion-button amenities-button">
+                            {{ amenities.title }}
+                          </button>
+                        </h2>
+                        <div [id]="'collapse' + i" class="accordion-collapse collapse"
+                          [attr.aria-labelledby]="'heading' + i" [ngClass]="{ show: amenities.show }"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <!-- <div class="scrollable-content">
+                            <p *ngFor="let content of item.content">
+                              {{ content }}
+                            </p>
+                          </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="tab_selected === 'flat360'" class="content">
+              <div class="row ammentiesAcordian" style="justify-content: center;">
+                <div *ngIf="projectData?.flat_details?.specification?.top_image" class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="AccordianImgs position-relative">
+                    <div class="accordion-spec-img specImg">
+                      <img [src]="projectData?.flat_details?.specification?.top_image" alt="" />
+                    </div>
+                    <div class="smallImg specImg2">
+                      <img [src]="projectData?.flat_details?.specification?.bottom_image" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="amenities-ac col-lg-6 col-md-6 col-sm-12">
+                  <div class="Accordian accordion" id="accordionExample">
+                    <div style="max-height: 80vh; overflow-y: scroll;">
+                    <div class="accordion-item" *ngFor="let Specification of projectData?.flat_details?.specification?.bulleting; let i = index">
+                      <h2 class="accordion-header" [id]="'heading' + i">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                          [attr.data-bs-target]="'#collapse' + i" [attr.aria-controls]="'collapse' + i"
+                          [attr.aria-expanded]="Specification.show" (click)="toggleFaqItem(Specification)">
+                          {{ Specification.title }}
+                        </button>
+                      </h2>
+                      <div [id]="'collapse' + i" class="accordion-collapse collapse"
+                        [attr.aria-labelledby]="'heading' + i" [ngClass]="{ show: Specification.show }"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <div class="scrollable-content">
+                            <p >
+                              {{ Specification.points[0] }}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="tab_selected === 'live'" class="content">
+            <div class="swiper floorPlan" style="margin-top: 8%;">
+              <div class="swiper-wrapper floorWrapper"
+                [ngStyle]="{'justify-content' : !projectData.flat_details.isometric_view.media[1] ? 'center' : 'initial'}">
+                <div class="swiper-slide" data-bs-toggle="modal" data-bs-target="#floorOpen" *ngFor="let floorPlan of projectData.flat_details.isometric_view.media">
+                  <div class="floorImg">
+                    <img [src]="floorPlan"  (click)="modalFloorSource(floorPlan)" alt="" class="img-fluid" style="width: 100% ; cursor: pointer;" />
+                  </div>
+                </div>
+
+              </div>
+              <!-- <div class="swiper-pagination"></div> -->
+            </div>
+            <div  class="swipe-next"><img style="transform: rotate(180deg);"
+                src="../../../assets/icons/navigationIcon.png" alt=""></div>
+            <!-- <div class="swiper-pagination"></div> -->
+            <div   class="swipe-prev"><img src="../../../assets/icons/navigationIcon.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div *ngIf="projectData?.gallery_medias.length"  class="container-fluid GallaryHall">
+  <h1 class="text-center">Gallery</h1>
+  <div class="carousel-wrapper">
+    <div class="GallaryCarousel">
+      <div class="swiper-block">
+        <div class="container-fluid" style="position: relative; ">
+          <div style="overflow: hidden;">
+            <!-- Swiper -->
+            <div class="swiper-container swiper-container-Gallary">
+              <div class="swiper-wrapper" [ngStyle]="{'justify-content' : !projectData.gallery_medias[1] ? 'center' : 'initial'}">
+                <div data-bs-toggle="modal" data-bs-target="#imageOpen" class="swiper-slide GallarySlide"
+                  *ngFor="let media of projectData.gallery_medias">
+                  <img (click)="modalImgSource(media)" [src]="media" alt="" />
+                </div>
+              </div>
+              <!-- Add Pagination -->
+
+            </div>
+          </div>
+
+          <div class="swiper-next"><img style="transform: rotate(180deg);"
+              src="../../../assets/icons/navigationIcon.png" alt=""></div>
+          <!-- <div class="swiper-pagination"></div> -->
+          <div class="swiper-prev"><img src="../../../assets/icons/navigationIcon.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- gallery Image Modal -->
+
+<div class="modal fade" id="imageOpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-bs-backdrop="static" *ngIf="modalVisible">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div close-video class="d-flex justify-content-end close-video">
+        <div class="gallery-close" data-bs-dismiss="modal" aria-label="Close"><img
+            src="../../../assets/icons/cross-icon.svg" alt=""></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Loop through images here -->
+            <div class="swiper-slide" *ngFor="let media of projectData.gallery_medias">
+              <img class="modalImg" [src]="media" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <!-- <div id="videoContainer">
+          <img class="modalImg" [src]="modalImg" alt="">
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--  -->
+
+
+<!-- Floor Plan Modal -->
+<div class="modal fade" id="floorOpen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-bs-backdrop="static" *ngIf="floorModalVisible">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div close-video class="d-flex justify-content-end close-video">
+        <div class="gallery-close" data-bs-dismiss="modal" aria-label="Close"><img
+            src="../../../assets/icons/cross-icon.svg" alt=""></div>
+      </div>
+      <div class="modal-body">
+        <div class="floor-swiper-container">
+          <div class="swiper-wrapper">
+            <!-- Loop through images here -->
+            <div class="swiper-slide" style="margin:auto !important;" *ngFor="let floorPlan of projectData.flat_details.isometric_view.media">
+              <img class="modalImg" style="aspect-ratio: initial !important;" [src]="floorPlan" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <!-- <div id="videoContainer">
+          <img style="aspect-ratio: auto;" class="modalImg" [src]="floorImg" alt="">
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+<div *ngIf="projectData.layout" class="layout p-0">
+  <div class="container">
+    <h1>Layout</h1>
+  </div>
+  <img [src]="projectData?.layout" alt="" />
+</div>
+
+<div *ngIf="projectData?.maps[0] || projectData?.location_in_map" class="margins GoogleMaps" style="margin-bottom: 4%;">
+  <h2 class="my-4 text-center text-bold">Map</h2>
+
+
+
+  <div class="row" style="justify-content: center;">
+    <div class="col-lg-7 col-md-7 col-sm-12">
+
+   <iframe
+
+   width=" 100%"
+   [src]="mapUrl"
+   height="100%"
+
+   style="border: 0; min-height: 350px;"
+   allowfullscreen=""
+   loading="lazy"
+   referrerpolicy="no-referrer-when-downgrade"
+ >
+ </iframe>
+      </div>
+      <div *ngIf="projectData?.maps[0]" class="col-lg-5 col-md-5 col-sm-12  mobMap"  style="padding-left: 3%;">
+       <div style="background-color: #333333; padding-bottom: 10%;">
+
+        <div class="iconsDiv">
+          <div class="d-flex" style="width: 100%;">
+
+            <div *ngFor="let locType of mapArray" style="width: 20%;">
+
+              <div [ngClass]="{'icon-selected':location == 'School'}" *ngIf="locType.type == 'School'"
+                (click)="mapLocation('School')" class="iconInnerDiv">
+                <img [ngClass]="{'d-block' : location == 'School', 'd-none' : location != 'School'}"
+                  src="../../../assets/icons/schoolSel.png" alt="">
+                <img [ngClass]="{'d-none' : location == 'School', 'd-block' : location != 'School'}"
+                  src="../../../assets/icons/school.png" alt="">
+
+              </div>
+              <div [ngClass]="{'icon-selected':location == 'IT'}" *ngIf="locType.type == 'IT'"
+                (click)="mapLocation('IT')" class="iconInnerDiv">
+                <img [ngClass]="{'d-block' : location == 'IT', 'd-none' : location != 'IT'}"
+                  src="../../../assets/icons/itSel.png" alt="">
+                <img [ngClass]="{'d-none' : location == 'IT', 'd-block' : location != 'IT'}"
+                  src="../../../assets/icons/it.png" alt="">
+              </div>
+              <div [ngClass]="{'icon-selected':location == 'Hospital'}" *ngIf="locType.type == 'Hospital'"
+                (click)="mapLocation('Hospital')" class="iconInnerDiv">
+                <img [ngClass]="{'d-block' : location == 'Hospital', 'd-none' : location != 'Hospital'}"
+                  src="../../../assets/icons/hospitalSel.png" alt="">
+                <img [ngClass]="{'d-none' : location == 'Hospital', 'd-block' : location != 'Hospital'}"
+                  src="../../../assets/icons/hospital.png" alt="">
+              </div>
+              <div [ngClass]="{'icon-selected':location== 'Malls'}" *ngIf="locType.type == 'Malls'"
+                (click)="mapLocation('Malls')" class="iconInnerDiv">
+                <img [ngClass]="{'d-block' : location == 'Malls', 'd-none' : location != 'Malls'}"
+                  src="../../../assets/icons/mallSel.png" alt="">
+                <img [ngClass]="{'d-none' : location == 'Malls', 'd-block' : location != 'Malls'}"
+                  src="../../../assets/icons/mall.png" alt="">
+              </div>
+              <div [ngClass]="{'icon-selected':location == 'Others'}" *ngIf="locType.type == 'Others'"
+                (click)="mapLocation('Others')" class="iconInnerDiv">
+                <img [ngClass]="{'d-block' : location == 'Others', 'd-none' : location != 'Others'}"
+                  src="../../../assets/icons/othersSel.png" alt="">
+                <img [ngClass]="{'d-none' : location == 'Others', 'd-block' : location != 'Others'}"
+                  src="../../../assets/icons/others.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="place row">
+          <div class="col-6 col-lg-6 col-md-6 col-sm-6 ">
+            <span>{{locationData?.title}}</span>
+          </div>
+          <div class="col-6 col-lg-6 col-md-6 col-sm-6 " style="text-align: end;">
+            <span>Distance</span>
+          </div>
+
+        </div>
+
+        <div>
+
+          <div *ngFor="let map of locationData?.locations" class="placeInfo row">
+            <div class="col-8 col-lg-8 col-md-8 col-sm-8">
+              <span>
+                {{map.location_name}}
+              </span>
+            </div>
+            <div class="col-4 col-lg-4 col-md-4 col-sm-4" style="text-align: center;">
+              <span>
+                {{map.distance}}
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- <div class="placeInfo row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+            <span>
+              Kidzee Magarpatta city
+            </span>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4" style="text-align: center;">
+           <span>
+            1.1 KM
+           </span>
+      </div>
+    </div>
+
+    <div class="placeInfo row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+            <span>
+              Kidzee Magarpatta city
+            </span>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4" style="text-align: center;">
+           <span>
+            1.1 KM
+           </span>
+      </div>
+    </div> -->
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="row" style="justify-content: center; margin: auto;">
+<div  *ngIf = "projectData.apartment_document.length" class=" Documents  col-lg-7 col-md-7 col-sm-12">
+  <div [ngClass]="{'borderRight' : projectData?.tech_stack?.entries.length}"  class="">
+  <h1 style="margin-bottom: 5%;">Documents</h1>
+
+  <div class="row documentsDiv" style="margin-bottom: 5%; justify-content: center;">
+    <div *ngIf="projectData?.apartment_document[0]" class=" documents-div">
+      <div class="Document-row " *ngFor="let document of projectData.apartment_document">
+        <div class="content-div">
+          <p class="content">{{ document.title }}</p>
+        </div>
+        <div class="mobileView">
+          <div class="document-wrapper">
+            <button (click)="isFormSubmitted(document.location)" class="btn btn-outline open d-flex align-items-center gap-1">
+              Open <img src="assets/detailProject/open.png" alt="" />
+            </button>
+          </div>
+
+          <div class="document-wrapper">
+            <button (click)="isFormSubmitted(document.location)" class="download btn btn-outline text-white d-flex gap-1">
+              Download <img src="assets/detailProject/download.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+</div>
+<div *ngIf = "projectData?.tech_stack?.entries.length" class=" Documents col-lg-5 col-md-5 col-sm-12">
+  <h1 style="margin-bottom: 5%;">Credits</h1>
+  <div>
+
+
+
+<div *ngIf="projectData?.tech_stack?.entries[0]" class="Address overflow-hidden   ">
+  <ul *ngFor="let members of projectData?.tech_stack?.entries" style="list-style-type:disc">
+    <li>
+      <span>{{members.key}} &nbsp;</span>{{ members.value }}
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+</div>

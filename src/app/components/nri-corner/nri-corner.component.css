@@ -1,0 +1,143 @@
+section {
+  margin: 0 7%;
+}
+.sectionMargin {
+  margin-top: 5% !important;
+}
+
+.firstSection {
+  text-align: center;
+}
+
+.heading span {
+  font-family: "alido";
+  color: #f27f0c;
+  text-transform: uppercase;
+  font-size: 6vw;
+  display: inline-block;
+}
+
+.heading {
+  margin-top: 5%;
+  margin-bottom: 3%;
+  overflow: hidden;
+}
+
+.title {
+  margin-bottom: 2.5%;
+  overflow: hidden;
+}
+.title span {
+  font-family: "metropolis";
+  font-size: 2.2vw;
+  color: #333333;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.text {
+  /* font-family: "metropolisNF"; */
+
+  text-align: justify;
+  font-size: 1.2vw;
+  color: #333333;
+  overflow: hidden;
+}
+.text span {
+  display: inline-block;
+}
+.firstPara {
+  margin: 0 5.5%;
+  margin-bottom: 3% !important;
+}
+
+.pointerText {
+  width: 95%;
+}
+
+.pointerTitles {
+  font-weight: 600;
+  font-family: "metropolis";
+  margin-bottom: 8%;
+  font-size: 1.8vw;
+  padding-top: 10%;
+  overflow: hidden;
+}
+.pointerTitles span {
+  display: inline-block;
+}
+
+.bottomTitle {
+  font-weight: 600;
+  font-family: "metropolis";
+  font-size: 1.8vw;
+  margin: 4% 0;
+}
+
+.textPadding {
+  padding-left: 2%;
+}
+
+.animateImg img,
+.bottomTitle span,
+.animate-email span,
+.animate-contact span {
+  display: inline-block;
+}
+.textImg,
+.textImg2,
+.animateImg,
+.bottomTitle,
+.bottomText,
+.animate-contact {
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .heading {
+    text-align: center;
+    margin-top: 9%;
+    margin-bottom: 9%;
+  }
+  .firstSection {
+    text-align: left;
+  }
+  .sectionMargin {
+    margin-top: 8% !important;
+  }
+  .section {
+    margin: 0 5.5%;
+  }
+  .mobileView {
+    flex-direction: column-reverse;
+  }
+  .firstPara {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5% !important;
+  }
+  .pointerTitles {
+    padding-top: 0%;
+    margin-bottom: 3%;
+    font-size: 3.8vw;
+  }
+  .text {
+    margin-bottom: 5%;
+    font-size: 3vw;
+    margin-top: 5%;
+  }
+  img {
+    margin-bottom: 3%;
+  }
+  .textPadding {
+    padding-left: 0;
+  }
+  .heading span {
+    font-size: 11.5vw;
+  }
+  .title span {
+    font-size: 4.5vw;
+  }
+  .bottomTitle {
+    font-size: 3.8vw;
+  }
+}

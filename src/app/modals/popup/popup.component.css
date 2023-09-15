@@ -1,0 +1,133 @@
+#pop-up img {
+  width: 100%;
+}
+
+.errorMsg {
+  color: red;
+  padding-left: 10%;
+  padding-top: 1%;
+}
+
+.modal-content {
+  width: 70%;
+  margin: auto;
+}
+.form-control {
+  padding: 0.675rem 0.75rem !important;
+}
+
+.modal-dialog {
+  max-width: unset;
+  width: fit-content;
+}
+
+.formDiv {
+  padding-top: 0 !important;
+}
+.modal-heading {
+  color: var(--primary, #f27f0c);
+  font-family: Alido;
+  /* font-size: 1.2vw; */
+
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 10% !important;
+  margin-top: 0.55% !important;
+  margin-left: 0;
+  margin-left: 0;
+  background: transparent;
+  border: none;
+  padding-left: 5%;
+  width: 10%;
+  margin-top: 0.55%;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-top span {
+    font-size: 1.7rem !important;
+    width: 75%;
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 500px) {
+  .modal-top span {
+    font-size: 1.35rem !important;
+  }
+}
+
+.form-label {
+  font-weight: 600;
+}
+.modal-content {
+  border: none;
+  box-shadow: 1px 1px 4px 4px #15151529;
+}
+.modal-content,
+.modal-body {
+  border-radius: 1rem;
+}
+.modal-top {
+  border-radius: 1rem 1rem 0 0;
+}
+.banner-img {
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  height: 100%;
+}
+.modal-body {
+  position: relative;
+  background-color: var(--secondary, #faf6f0);
+}
+.form-outline input {
+  border-radius: 25rem;
+  border: 1px solid rgba(1, 18, 26, 0.5);
+  background: var(--secondary, #faf6f0);
+  flex-shrink: 0;
+}
+
+.submit-form {
+  border-radius: 100px;
+  background: var(--primary, #f27f0c);
+  flex-shrink: 0;
+  padding: 0.9rem 3.5rem;
+  color: var(--secondary, #faf6f0);
+  text-align: center;
+  font-family: Metropolis;
+  /* font-size: 1vw; */
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 3%;
+}
+.modal-top {
+  background: var(--primary, #f27f0c);
+
+  text-align: center;
+  padding: 2.5% 0;
+}
+.modal-top span {
+  color: #faf6f0;
+  font-family: "Alido";
+  font-size: 1.7vw;
+}
+/* .close-btn {
+  filter: invert(1);
+} */
+
+@media (max-width: 992px) {
+  .modal-content {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 340px) {
+  .submit-form {
+    padding: 6% 0 !important;
+  }
+}

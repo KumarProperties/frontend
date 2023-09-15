@@ -1,0 +1,367 @@
+<div class="container-fluid project-listing">
+  <div class="wrapper">
+    <div class="container">
+      <div class="tabs_wrap">
+        <ul>
+          <li (click)="selectTab('residential')" [ngClass]="{ active: selectedTab === 'residential' }"
+            data-tabs="residential">
+            Residential
+          </li>
+          <li (click)="selectTab('commercial')" [ngClass]="{ active: selectedTab === 'commercial' }"
+            data-tabs="commercial">
+            Commercial
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="projects-wrapper">
+    <div class="item_wrap container-fluid px-0">
+      <div>
+        <div class="filter">
+          <div class="btn filterBtn mt-5" (click)="openModal()">
+            Filter
+            <img src="assets/career/plus.svg" alt="" style="width: 32px" />
+          </div>
+          <div *ngIf="showModal">
+            <div class="modal-container px-0">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="text-uppercase">Filter</h1>
+                  <img class="close cursor--pointer" (click)=" closeModal()" src="assets/icons/close-btn.svg" alt="">
+                </div>
+                <div class="container-fluid px-0">
+                  <div class="consumerContainer">
+                    <div class="cites justify-content-center">
+                      <p class="pe-3">Cities</p>
+                      <div class="dropdown">
+                        <input type="checkbox" class="dropdown__switch" id="filter-switch1-m" hidden />
+                        <label for="filter-switch1-m" class="dropdown__options-filter"
+                          (click)="onDocumentClick($event)">
+                          <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                            <li class="dropdown__filter-selected" aria-selected="true">
+                              {{ selectedOption1 }}
+                            </li>
+                          </ul>
+
+                          <ul class="dropdown__select">
+                            <div >
+
+
+                              <li
+                              *ngIf=" cities[2]?.residential_property_count > 0 && selectedTab == 'residential' || cities[2]?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                              class="dropdown__select-option" role="option" (click)="onOptionClick1( cities[2].name,  cities[2].city_id)">
+                              {{  cities[2].name }}
+                            </li>
+                            <li
+                            *ngIf=" cities[0].name == 'Bengaluru' &&  cities[0]?.residential_property_count > 0 && selectedTab == 'residential' ||cities[0]?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                            class="dropdown__select-option" role="option" (click)="onOptionClick1(cities[0].name, cities[0].city_id)">
+                            {{ cities[0].name }}
+                          </li>
+                          <li
+                          *ngIf="cities[1].name == 'Mumbai' &&  cities[1]?.residential_property_count > 0 && selectedTab == 'residential' ||cities[1]?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                          class="dropdown__select-option" role="option" (click)="onOptionClick1(cities[1].name, cities[1].city_id)">
+                          {{ cities[1].name }}
+                        </li>
+
+                            </div>
+                          </ul>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cites">
+                      <p>Location</p>
+                      <div class="dropdown">
+                        <input type="checkbox" class="dropdown__switch" id="filter-switch2" hidden />
+                        <label for="filter-switch2" class="dropdown__options-filter" (click)="onDocumentClick($event)">
+                          <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                            <li class="dropdown__filter-selected" aria-selected="true">
+                              {{ selectedOption2 }}
+                            </li>
+                          </ul>
+
+                          <ul class="dropdown__select">
+                            <div *ngFor="let location of locations">
+
+                              <li class="dropdown__select-option" role="option"
+                                *ngIf="location?.residential_property_count > 0 && selectedTab == 'residential' ||location?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                                (click)="
+                              onOptionClick2(location.name, location.location_id)
+                              ">
+                                {{ location.name }}
+                              </li>
+                            </div>
+                          </ul>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-around mobileInput">
+                      <div class="cites col-6 pe-1">
+                        <p>Configuration</p>
+                        <div class="dropdown">
+                          <input type="checkbox" class="dropdown__switch" id="filter-switch3" hidden />
+                          <label for="filter-switch3" class="dropdown__options-filter"
+                            (click)="onDocumentClick($event)">
+                            <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                              <li class="dropdown__filter-selected" aria-selected="true">
+                                {{ selectedOption3 }}
+                              </li>
+                            </ul>
+                            <ul class="dropdown__select">
+                              <li *ngFor="let apt of aptTypes" class="dropdown__select-option" role="option"
+                                (click)="onOptionClick3(apt)">
+                                {{ apt }}
+                              </li>
+                            </ul>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="cites col-6 pl-1">
+                        <p>Status</p>
+                        <div class="dropdown">
+                          <input type="checkbox" class="dropdown__switch" id="filter-switch5" hidden />
+                          <label for="filter-switch5" class="dropdown__options-filter"
+                            (click)="onDocumentClick($event)">
+                            <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                              <li class="dropdown__filter-selected" aria-selected="true">
+                                {{ selectedOption5 }}
+                              </li>
+                            </ul>
+                            <ul class="dropdown__select">
+                              <li class="dropdown__select-option" role="option" (click)="onOptionClick5('Ongoing')">
+                                Ongoing
+                              </li>
+                              <li class="dropdown__select-option" role="option" (click)="onOptionClick5('New')">
+                                New Launch
+                              </li>
+                              <li class="dropdown__select-option" role="option" (click)="onOptionClick5('Sold')">
+                                Sold
+                              </li>
+                            </ul>
+                          </label>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                    <div class="Buttons d-flex">
+                      <!-- <div class="clear-filter col-6">
+                        <button (click)="clear()" class="btn">Clear Filter</button>
+                      </div> -->
+
+                      <div class="apply-filter col-6">
+                        <div  (click)="viewAll()" class="btn viewAll">
+                          <span>View All</span>
+                        </div>
+
+                      </div>
+
+                      <div class="apply-filter col-6" style="text-align: center;">
+                        <button (click)="apply()" class="btn"><span>Apply</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="consumerData desktop mt-2">
+          <div class="consumerContainer">
+            <div class="cites justify-content-center" (focusout)="focusOut($event)" tabindex="2">
+              <p class="px-0">Cities</p>
+              <div class="dropdown pt-2">
+                <input type="checkbox" class="dropdown__switch" id="filter-switch1" hidden />
+                <label for="filter-switch1" class="dropdown__options-filter" (click)="onDocumentClick($event)">
+                  <ul class="dropdown__filter" role="listbox">
+                    <li class="dropdown__filter-selected" aria-selected="true">
+                      {{ selectedOption1 }}
+                    </li>
+                  </ul>
+                  <ul class="dropdown__select">
+                    <div >
+
+                      <li
+                        *ngIf=" cities[2]?.residential_property_count > 0 && selectedTab == 'residential' || cities[2]?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                        class="dropdown__select-option" role="option" (click)="onOptionClick1( cities[2].name,  cities[2].city_id)">
+                        {{  cities[2]?.name }}
+
+                      </li>
+                      <li
+                      *ngIf=" cities[0]?.name == 'Bengaluru' &&  cities[0]?.residential_property_count > 0 && selectedTab == 'residential' ||cities[0]?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                      class="dropdown__select-option" role="option" (click)="onOptionClick1(cities[0]?.name, cities[0]?.city_id)">
+                      {{ cities[0]?.name }}
+
+                    </li>
+                    <li
+                    *ngIf="cities[1]?.name == 'Mumbai' &&  cities[1]?.residential_property_count > 0 && selectedTab == 'residential' ||cities[1]?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                    class="dropdown__select-option" role="option" (click)="onOptionClick1(cities[1]?.name, cities[1]?.city_id)">
+                    {{ cities[1]?.name }}
+                  </li>
+                    </div>
+                  </ul>
+                </label>
+              </div>
+            </div>
+            <div class="cites">
+              <p class="px-0">Location</p>
+              <div class="dropdown pt-2">
+                <input type="checkbox" class="dropdown__switch" id="filter-switch2" hidden />
+                <label for="filter-switch2" class="dropdown__options-filter" (click)="onDocumentClick($event)">
+                  <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                    <li class="dropdown__filter-selected" aria-selected="true">
+                      {{ selectedOption2 }}
+                    </li>
+                  </ul>
+                  <ul class="dropdown__select">
+                    <div *ngFor="let location of locations">
+                      <li class="dropdown__select-option" role="option"
+                        *ngIf="location?.residential_property_count >= 0 && selectedTab == 'residential' || location?.commercial_property_count > 0 && selectedTab == 'commercial' "
+                        (click)="
+                      onOptionClick2(location.name, location.location_id)
+                      ">
+                        {{ location.name }}
+                      </li>
+                    </div>
+                  </ul>
+                </label>
+              </div>
+            </div>
+            <div class="cites" *ngIf="selectedTab != 'commercial'">
+              <p class="px-0">Configuration</p>
+              <div class="dropdown pt-2">
+                <input type="checkbox" class="dropdown__switch" id="filter-switch3" hidden />
+                <label for="filter-switch3" class="dropdown__options-filter" (click)="onDocumentClick($event)">
+                  <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                    <li class="dropdown__filter-selected" aria-selected="true">
+                      {{ selectedOption3 }}
+                    </li>
+                  </ul>
+                  <ul class="dropdown__select">
+                    <li *ngFor="let apt of aptTypes" class="dropdown__select-option" role="option"
+                      (click)="onOptionClick3(apt)">
+                      {{ apt }}
+                    </li>
+                  </ul>
+                </label>
+              </div>
+            </div>
+
+            <div class="cites" *ngIf="selectedTab != 'commercial'">
+              <p class="px-0">Status</p>
+              <div class="dropdown pt-2">
+                <input type="checkbox" class="dropdown__switch" id="filter-switch5" hidden />
+                <label for="filter-switch5" class="dropdown__options-filter" (click)="onDocumentClick($event)">
+                  <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                    <li class="dropdown__filter-selected" aria-selected="true">
+                      {{ selectedOption5 }}
+                    </li>
+                  </ul>
+
+                  <ul class="dropdown__select">
+                    <li class="dropdown__select-option" role="option" (click)="onOptionClick5('Ongoing')">
+                      Ongoing
+                    </li>
+                    <li class="dropdown__select-option" role="option" (click)="onOptionClick5('New')">
+                      New Launch
+                    </li>
+                    <li class="dropdown__select-option" role="option" (click)="onOptionClick5('Sold')">
+                      Sold
+                    </li>
+                  </ul>
+                </label>
+              </div>
+            </div>
+
+            <div >
+              <p class="px-0" style="margin-bottom: 0.5rem; opacity: 0;">Configuration</p>
+              <div  (click)="viewAll()" class="viewAll">
+                <span>View All</span>
+              </div>
+
+            </div>
+
+            <div class="search">
+              <div class="searchIcon cursor--pointer" (click)="searchProjects()">
+                <img src="./assets/projectDetail/search-icon.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="kumarProjects">
+      <div class="row mx-0">
+        <div class="head-wrapper col-xl-9 col-lg-8 px-0">
+
+          <h1><div  *ngIf="allProjects.length">{{ currentProjectDetails.title || "Kumar Paradise" }}</div></h1>
+          <p >
+            <span *ngIf="allProjects.length">
+
+
+            {{
+            currentProjectDetails.sub_title ||
+            "2 BHK flats in Magarpatta Pune"
+            }}
+          </span>
+          </p>
+          <div class="no-projects" *ngIf="!allProjects.length">
+           <p>No Projects are Currently Available for the given filter</p>
+          </div>
+        </div>
+        <div  *ngIf="allProjects.length" class="col-xl-3 col-lg-4 explore d-flex justify-content-lg-end px-0">
+          <span> Explore </span>
+          <button [routerLink]="
+              '/project/' +
+              (currentProjectDetails.id || initialExploreProject)
+            " class="btn d-flex align-items-center pe-0">
+            <img src="assets/projectDetail/explore-icon.svg" alt="" />
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="imageSlider">
+      <section *ngIf="allProjects.length" style="position: relative;">
+        <div class="outer-wrapper" >
+          <div class="inner-wrapper">
+            <div class="pseudo-item" *ngFor="let project of allProjects">
+              <img [src]="project.title_image[0]" alt="" (mouseover)="
+                  currentProject({ title: project.title, id: project.slug,  sub_title: project.sub_title })
+                " [routerLink]="'/project/' + project.slug" />
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="pseudo-track"></div>
+        <div class="d-flex lottieDiv">
+          <span>Swipe to Know more</span>
+
+        <div class="lottie-animation ">
+
+          <ng-lottie
+            [options]="options"
+           >
+          </ng-lottie>
+        </div>
+
+      </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</div>

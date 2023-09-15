@@ -1,0 +1,68 @@
+<div class="modal fade" id="pop-up" tabindex="-1" aria-labelledby="pop-upLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img src="assets/common/crossBtn.png" alt="" (click)="close()" type="button" class="close-btn"
+          data-bs-dismiss="modal" />
+        <div>
+          <div class="">
+            <div class="modal-top"> <span>Please fill in the details</span></div>
+            <div class=" p-4">
+              <img class="banner-img" src="assets/icons/popupImg2.png" alt="pop up">
+            </div>
+            <div class="row formDiv justify-content-center p-4">
+
+              <form [formGroup]="leadData" (ngSubmit)="submitForm()">
+                <div class="row">
+
+
+                  <div class="col-lg-6 col-md-6 col-sm-6  col-xs-12 form-outline mb-3">
+                    <label class="form-label " style="padding-left: 10%;" for="form6Example1">First Name*</label>
+                    <input type="text" id="form6Example1" class="form-control" style="padding-left: 9%;"
+                      formControlName="Name" placeholder="Your first name here" />
+                      <div class="errorMsg" *ngIf="leadData.controls['Name'].invalid && (leadData.controls['Name'].dirty || leadData.controls['Name'].touched)">
+                        <div *ngIf="leadData.controls['Name'].errors?.['pattern']">First name is incorrect.</div>
+                        <div *ngIf="leadData.controls['Name'].errors?.['required']">First name is required.</div>
+
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  form-outline mb-3">
+                    <label class="form-label " style="padding-left: 10%;" for="form6Example1">Last Name*</label>
+                    <input type="text" id="form6Example1" class="form-control" style="padding-left: 9%;"
+                      formControlName="LastName" placeholder="Your Last name here" />
+                      <div class="errorMsg" *ngIf="leadData.controls['LastName'].invalid && (leadData.controls['LastName'].dirty || leadData.controls['LastName'].touched)">
+                        <div *ngIf="leadData.controls['LastName'].errors?.['pattern']">Last name is incorrect.</div>
+                        <div *ngIf="leadData.controls['LastName'].errors?.['required']">Last name is required.</div>
+
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6  col-xs-12 form-outline mb-2">
+                    <label class="form-label" style="padding-left: 10%;" for="form6Example1">Email ID*</label>
+                    <input type="email" id="form6Example1" formControlName="Email" class="form-control"
+                      style="padding-left: 9%;" placeholder="Your Email Here" />
+                      <div class="errorMsg" *ngIf="leadData.controls['Email'].invalid && (leadData.controls['Email'].dirty || leadData.controls['Email'].touched)">
+                        <div *ngIf="leadData.controls['Email'].errors?.['email']">Email id is incorrect.</div>
+                        <div *ngIf="leadData.controls['Email'].errors?.['required']">Email id is required.</div>
+
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6  col-xs-12  form-outline mb-2">
+                    <label class="form-label" style="padding-left: 10%;" for="form6Example1">Phone Number*</label>
+                    <input type="tel" formControlName="Phone" id="form6Example1" class="form-control"
+                      style="padding-left: 9%;" placeholder="+91" />
+                      <div class="errorMsg" *ngIf="leadData.controls['Phone'].invalid && (leadData.controls['Phone'].dirty || leadData.controls['Phone'].touched)">
+                        <div *ngIf="leadData.controls['Phone'].errors?.['pattern']">Phone Number is incorrect.</div>
+                        <div *ngIf="leadData.controls['Phone'].errors?.['required']">Phone Number is required.</div>
+
+                      </div>
+                  </div>
+                </div>
+                <button class="btn btn-warning btn-block w-100 text-white submit-form" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

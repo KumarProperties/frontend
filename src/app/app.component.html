@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+
+</div>
+<app-footer></app-footer>
+<app-enquire></app-enquire>
+<app-common-form></app-common-form>
+<app-popup></app-popup>
+<app-cookie></app-cookie>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="default" color="#fff" type="ball-pulse-sync" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<!-- <script  [src]="urlBot" type="text/javascript"
+[data-bot]="dataBot"></script> -->

@@ -1,0 +1,78 @@
+.modal-content {
+  width: max-content !important;
+  background-color: #faf6f0;
+}
+.modal-body {
+  min-width: 67vw !important;
+  padding-top: 0.5% !important;
+}
+@media screen and (min-width: 1400px) {
+  .modal-body {
+    min-width: 60vw !important;
+  }
+  .text span {
+    font-size: 1.05rem !important;
+  }
+  .acceptBtn img {
+    width: 20% !important;
+  }
+}
+
+.modal-dialog {
+  margin-left: 4% !important;
+  /* position: relative; */
+}
+
+.modal-dialog-centered {
+  align-items: end !important;
+}
+a {
+  text-decoration: none;
+  color: #f27f0c;
+}
+.titleDiv {
+  position: relative;
+}
+
+.close-btn {
+  width: 9% !important;
+
+  margin-left: 0;
+  background: transparent;
+  border: none;
+  padding-left: 5%;
+  filter: invert(1);
+}
+.title {
+  font-family: "metropolis";
+  font-size: 1.5rem;
+}
+.text span {
+  font-family: "metropolis";
+  font-size: 0.865rem;
+  color: #333333;
+  text-align: justify;
+}
+.modal-header {
+  border-bottom: 0 !important;
+}
+.acceptBtn {
+  padding-top: 2.8%;
+  padding-bottom: 1.5%;
+}
+.acceptBtn img {
+  width: 24%;
+  cursor: pointer;
+}
+/* .text {
+  padding-top: 10%;
+} */
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 1rem !important;
+  }
+  .text span {
+    font-size: 0.7rem !important;
+  }
+}

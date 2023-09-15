@@ -1,0 +1,104 @@
+.margins {
+  margin: 0 8.5%;
+}
+a {
+  text-decoration: none;
+}
+.card-padding {
+  padding: 2%;
+}
+
+.inner-padding {
+  padding: 2%;
+}
+.card {
+  background-color: #faf6f0;
+  border-radius: 1.2rem;
+}
+.card-text {
+  font-family: "metropolis";
+  font-size: 1.2vw;
+  font-weight: 600;
+  color: #333333;
+}
+.card-body {
+  min-height: 18vh;
+  margin-top: 4%;
+}
+.card-footer {
+  padding: 4%;
+  padding-top: 6% !important;
+  border-top: 1.5px solid #333333;
+  background-color: #faf6f0 !important;
+}
+.footerContent {
+  margin-left: 4%;
+  font-family: "metropolis";
+  font-size: 1.2vw;
+}
+.footerContent img {
+  margin-right: 5.3%;
+}
+.hoverDiv {
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.hoverDiv:hover .card-img-top {
+  opacity: 0;
+}
+.hoverDiv:hover {
+  background-color: #f27f0c;
+  transition: 0.8s ease;
+}
+.hoverDiv:hover .viewBlog {
+  display: block;
+}
+.hoverDiv:hover .card {
+  border: 1px solid #f27f0c;
+}
+.viewBlog {
+  display: none;
+  position: absolute;
+  top: 36%;
+  left: 32%;
+  cursor: pointer;
+  z-index: 17;
+}
+.viewBlog span {
+  font-size: 1.5vw;
+  font-family: "metropolis";
+  color: #faf6f0;
+}
+
+.arrow {
+  width: 35%;
+  margin-left: 6%;
+}
+.card-img-top {
+  aspect-ratio: 77/50;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 992px) {
+  .card-text {
+    font-size: 2.2vw;
+  }
+  .footerContent {
+    font-size: 2.2vw;
+  }
+  .viewBlog span {
+    font-size: 2.5vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .card-text {
+    font-size: 3.2vw;
+  }
+  .footerContent {
+    font-size: 3.2vw;
+  }
+  .viewBlog span {
+    font-size: 3.5vw;
+  }
+}

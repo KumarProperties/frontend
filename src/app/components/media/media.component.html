@@ -1,0 +1,501 @@
+<div class="mediaPage">
+    <div class="wrapper container">
+
+        <div class="tabs_wrap Media row ">
+            <ul class="col-lg-12">
+                <li (click)="selectTab('EVENT')" [ngClass]="{ 'active': selectedTab === 'EVENT' }" data-tabs="EVENT">
+                    Events
+                </li>
+
+                <li (click)="selectTab('Exhibition')" [ngClass]="{ 'active': selectedTab === 'Exhibition' }"
+                    data-tabs="Exhibition">
+                    Exhibitions</li>
+                <li (click)="selectTab('CSR-ACTIVITIES')" [ngClass]="{ 'active': selectedTab === 'CSR-ACTIVITIES' }"
+                    data-tabs="CSR-ACTIVITIES">
+                    CSR Activities</li>
+            </ul>
+
+        </div>
+
+
+    </div>
+    <div class="container-fluid">
+
+        <div [ngClass]="{
+          'd-block': selectedTab === 'EVENT',
+          'd-none': selectedTab != 'EVENT'
+        }" class="container-fluid">
+            <div *ngIf=false class="row rotateReverse">
+                <div class="imageText col-lg-6 col-xl-6">
+                    <div class="headding">
+                        <h1>Upcoming
+                            Events</h1>
+
+                    </div>
+                    <div class="belowText">
+                        <h3>Medical Health Checkup</h3>
+                        <p>Park Infinia Site – 4th and 5th October 2018</p>
+                    </div>
+                    <div class="KnowMore">
+                        <span>Know More <button class="btn"><i class="fa-solid fa-arrow-right"></i></button></span>
+
+                    </div>
+
+                </div>
+                <div class="MainImg col-lg-6 col-xl-6">
+                    <img src="assets/media/Rectangle 255 (1).png" alt="">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 Events">
+                    <h1>Past Events</h1>
+                </div>
+
+            </div>
+            <div class="container-fluid  ">
+
+
+              <div class="row" style="margin-top: 5%">
+                <div
+                *ngFor="let event of eventData  | paginate
+                : {
+                     id: 'pagination1',
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };
+            let i = index"
+                  class="card-padding col-lg-4 col-md-6 col-sm-12"
+                >
+                <div *ngIf=event.thumb>
+                  <div class="card">
+                    <div class="inner-padding">
+                      <div class="hoverDiv">
+                        <div class="viewBlog">
+                          <div (click)="gotopage(event._id)">
+                            <span>View</span>
+                            <img
+                              class="arrow"
+                              src="../../assets/blogs/blogsArrow.png"
+                              alt=""
+                            />
+                        </div>
+                        </div>
+                        <img
+                          class="card-img-top"
+                          src="{{event.thumb}}"
+                          alt="Card image cap"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">{{event.title}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <div class="footerContent">
+                          <img src="../../assets/icons/calendar 1.png" alt="" />
+                          <span>{{((event.date.start_date | date : "mediumDate") !.split(",")[0] )}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+
+
+              </div>
+
+              </div>
+
+                <!-- <div class="row">
+                    <div class="pagination-controls d-flex justify-content-end ">
+
+                        <div class="d-flex dropdown-box">
+                            <label for="cards-per-page">Items per page:</label>
+
+                            <div class="select">
+                                <div class="selectBtn select-Btn" data-type="firstOption">6</div>
+                                <div class="selectDropdown small-select">
+                                    <div class="option" data-type="firstOption">12</div>
+                                    <div class="option" data-type="secondOption">6</div>
+                                    <div class="option" data-type="thirdOption">8</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span>1 - 6 of 100</span>
+                        <div>
+                            <div class="d-flex">
+                                <button class="btn " (click)="previousPage()" [disabled]="currentPage === 1"><i
+                                        class="fa-solid fa-chevron-left"></i></button>
+                                <button class="btn " (click)="nextPage()" [disabled]="currentPage === totalPages"><i
+                                        class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="row" style="text-align: end">
+                  <!-- <div class="col-lg-5 col-md-4 col-sm-12"></div> -->
+                  <div
+                    class="d-flex col-lg-12 col-sm-12 col-md-12 paginationBox justify-content-end"
+                  >
+                    <!-- <div class="itemsperPage">
+                      <label for="cards-per-page">Items per page:</label>
+                    </div>
+
+                    <div class="marRight">
+                      <div
+                        class="select itemsPrPg-div"
+
+                        tabindex="1"
+                      >
+                        <div
+                          class="selectBtn select-Btn itemsPrPg"
+                          style="width: 100% !important"
+                          data-type="firstOption"
+                        >
+                          6
+                        </div>
+                        <div class="selectDropdown small-select">
+                          <div
+                            class="option"
+                            (click)="updateTableSize(6)"
+                            value="6"
+                            data-type="firstOption"
+                          >
+                            <div><span>6</span></div>
+                          </div>
+                          <div
+                            class="option"
+                            (click)="updateTableSize(12)"
+                            value="12"
+                            data-type="secondOption"
+                          >
+                            <div><span>12</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <span class="pageCount"
+                      >{{ tableSize * page - tableSize + 1 }} -
+                      {{
+                        tableSize * page < eventData.length
+                          ? tableSize * page
+                          : eventData.length
+                      }}
+                      of {{ eventData.length }}</span
+                    >
+
+                    <div>
+                      <pagination-controls
+                        id="pagination1"
+                        previousLabel=""
+                        nextLabel=""
+                        (pageChange)="onTableDataChange($event)"
+                      >
+                      </pagination-controls>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div
+        [ngClass]="{
+          'd-block': selectedTab === 'Exhibition',
+          'd-none': selectedTab != 'Exhibition'
+        }"
+
+        class="container-fluid">
+            <div *ngIf=false class="row rotateReverse ">
+                <div class="imageText col-lg-6 col-xl-6">
+                    <div class="headding">
+                        <h1>Upcoming
+                            EXIBITIONS</h1>
+
+                    </div>
+                    <div class="belowText">
+                        <h3>Medical Health Checkup</h3>
+                        <p>Park Infinia Site – 4th and 5th October 2018</p>
+                    </div>
+                    <div class="KnowMore">
+                        <span>Know More <button class="btn"><i class="fa-solid fa-arrow-right"></i></button></span>
+
+                    </div>
+
+                </div>
+                <div class="MainImg col-lg-6 col-xl-6">
+                    <img src="assets/media/Rectangle 255 (1).png" alt="">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 Events">
+                    <h1>Past Exhibitions</h1>
+                </div>
+
+            </div>
+            <div class="container-fluid  " style="margin-bottom: 5%;">
+
+
+              <div class="row" style="margin-top: 5%">
+                <div
+                  *ngFor="let exhibition of exhibitionData  | paginate
+                  : {
+                    id: 'pagination2',
+                      itemsPerPage: tableSize2,
+                      currentPage: page2,
+                      totalItems: count2
+                    };
+              let i = index"
+                  class="card-padding col-lg-4 col-md-6 col-sm-12"
+                >
+                  <div class="card">
+                    <div class="inner-padding">
+                      <div >
+
+                        <img
+                          class="card-img-top"
+                          src={{exhibition.files[0]}}
+                          alt="Card image cap"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">{{exhibition.title}}</p>
+                        <p class="card-text">{{exhibition.location}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <div class="footerContent">
+                          <img src="../../assets/icons/calendar 1.png" alt="" />
+                          <span>{{(exhibition.date.start_date  | date : "mediumDate") !.split(",")[0] }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row" *ngIf="false" style="text-align: end">
+                <!-- <div class="col-lg-5 col-md-4 col-sm-12"></div> -->
+                <div
+                  class="d-flex col-lg-12 col-sm-12 col-md-12 paginationBox justify-content-end"
+                >
+
+
+                  <span class="pageCount"
+                    >{{ tableSize2 * page2 - tableSize2 + 1 }} -
+                    {{
+                      tableSize2 * page2 < exhibitionData.length
+                        ? tableSize2 * page2
+                        : exhibitionData.length
+                    }}
+                    of {{ exhibitionData.length }}</span
+                  >
+
+                  <div>
+                    <pagination-controls
+                    id="pagination2"
+
+                      previousLabel=""
+                      nextLabel=""
+                      (pageChange)="onTableDataChange2($event)"
+                    >
+                    </pagination-controls>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div
+
+        [ngClass]="{
+          'd-block': selectedTab === 'CSR-ACTIVITIES',
+          'd-none': selectedTab != 'CSR-ACTIVITIES'
+        }"
+        class="container-fluid">
+            <div *ngIf=false class="row CsrContainer">
+                <div class="imageText col-lg-6 col-xl-6">
+
+                    <div class="headding CSR-headding">
+                        <h1>Upcoming
+                            CSR ACTIVITY</h1>
+                    </div>
+                    <div class="belowText">
+                        <h3>Medical Health Checkup</h3>
+                        <p>Park Infinia Site – 4th and 5th October 2018</p>
+                    </div>
+                    <div class="KnowMore">
+                        <span>Know More <button class="btn"><i class="fa-solid fa-arrow-right"></i></button></span>
+                    </div>
+
+                </div>
+                <div class="MainImg col-lg-6 col-xl-6">
+                    <img src="assets/media/Rectangle 255 (1).png" alt="">
+                </div>
+
+
+            </div>
+            <div class="row csr-para" >
+                <div class="container">
+                    <p class="co-lg-12 col-sm-12 col-xs-12 col-md-12 kumarGrowUp">Kumar Corp – Top builder in
+                        pune as a
+                        group understands
+                        that success in
+                        business is
+                        deeply
+                        rooted in the progress of the society. The group aims to enrich society by helping poor and
+                        needy sections of people/society. Being a good corporate citizen is integral to the group’s
+                        corporate purpose of advancing the way people live and work.
+                        Kumar Corp as a group has taken several initiatives in the fields of education,
+                        health,
+                        and sports.</p>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-lg-6  CSR-ACTIVITIES">
+                    <h1>Past CSR Activities</h1>
+                </div>
+
+            </div>
+            <div class="container-fluid  " style="margin-bottom: 5%;">
+              <div class="row" style="margin-top: 5%">
+                <div
+                   *ngFor="let csr of CSRData  | paginate
+                   : {
+                    id: 'pagination3',
+                       itemsPerPage: tableSize3,
+                       currentPage: page3,
+                       totalItems: count3
+                     };
+               let i = index"
+                  class="card-padding col-lg-4 col-md-6 col-sm-12"
+                >
+                  <div class="card">
+                    <div class="inner-padding">
+                      <div class="hoverDiv">
+                        <div class="viewBlog">
+                          <div  (click)="gotopage(csr._id)" >
+                            <span>View</span>
+                            <img
+                              class="arrow"
+                              src="../../assets/blogs/blogsArrow.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <img
+                          class="card-img-top"
+                          src={{csr.thumb}}
+                          alt="Card image cap"
+                        />
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">{{csr.title}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <div class="footerContent">
+                          <img src="../../assets/icons/calendar 1.png" alt="" />
+                          <span>{{(csr.date.start_date  | date : "mediumDate") !.split(",")[0]  }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+              <div class="row" *ngIf="false" style="text-align: end">
+                <!-- <div class="col-lg-5 col-md-4 col-sm-12"></div> -->
+                <div
+                  class="d-flex col-lg-12 col-sm-12 col-md-12 paginationBox justify-content-end"
+                >
+                  <!-- <div class="itemsperPage">
+                    <label for="cards-per-page">Items per page:</label>
+                  </div>
+
+                  <div class="marRight">
+                    <div
+                      class="select itemsPrPg-div"
+
+                      tabindex="1"
+                    >
+                      <div
+                        class="selectBtn select-Btn itemsPrPg"
+                        style="width: 100% !important"
+                        data-type="firstOption"
+                      >
+                        6
+                      </div>
+                      <div class="selectDropdown small-select">
+                        <div
+                          class="option"
+                          (click)="updateTableSize(6)"
+                          value="6"
+                          data-type="firstOption"
+                        >
+                          <div><span>6</span></div>
+                        </div>
+                        <div
+                          class="option"
+                          (click)="updateTableSize(12)"
+                          value="12"
+                          data-type="secondOption"
+                        >
+                          <div><span>12</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+                  <span class="pageCount"
+                    >{{ tableSize3 * page3 - tableSize3 + 1 }} -
+                    {{
+                      tableSize3 * page3 < CSRData.length
+                        ? tableSize3 * page3
+                        : CSRData.length
+                    }}
+                    of {{ CSRData.length }}</span
+                  >
+
+                  <div>
+                    <pagination-controls
+                    id = "pagination3"
+                      previousLabel=""
+                      nextLabel=""
+                      (pageChange)="onTableDataChange3($event)"
+                    >
+                    </pagination-controls>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

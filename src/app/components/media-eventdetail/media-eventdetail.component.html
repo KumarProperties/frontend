@@ -1,0 +1,31 @@
+<section class="margins">
+<div class="buttonDiv" style="margin-top: 3%">
+  <a routerLink="/media">
+    <img class="back" src="../../../assets/blogs/backBtn.png" alt="" />
+  </a>
+</div>
+<div class="row EventDetail">
+
+    <div class="imageText col-lg-5 col-md-5 col-sm-12">
+
+        <div class="headding">
+            <h1>{{eventData.title}}</h1>
+
+        </div>
+        <div class="belowText d-flex" >
+            <img class="calendar" src="../../../assets/icons/calendar 1.png" alt=""><h3>{{(eventData.date.start_date | date : "mediumDate" )!.split(",")[0] }} </h3>
+
+        </div>
+
+        <div class="paragraph">
+            <p [innerHTML]="eventData.desc"></p>
+        </div>
+
+
+    </div>
+    <div  class="MainImg col-lg-7 col-md-7 col-sm-12">
+        <img src={{eventData.thumb}} alt="">
+
+    </div>
+</div>
+</section>

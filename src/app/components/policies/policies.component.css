@@ -1,0 +1,262 @@
+/* tabs css */
+
+.margins {
+  margin: 0 7%;
+}
+.wrapper {
+  margin-bottom: 5.2%;
+}
+
+.wrapper .Ammenties ul li {
+  width: 231px;
+  text-align: center;
+  background: #e9ecf1;
+
+  padding: 12px 39px;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.wrapper .tabs_wrap ul li:first-child {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.wrapper .tabs_wrap ul li:last-child {
+  border-right: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.wrapper .tabs_wrap ul li:checked,
+.wrapper .tabs_wrap ul li.active {
+  background: #f27f0c;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.wrapper .tabs_wrap ul li:checked span,
+.wrapper .tabs_wrap ul li.active span {
+  opacity: 100% !important;
+}
+
+.wrapper .container .item_wrap {
+  /* padding: 10px 20px; */
+  border: 1px solid black;
+  cursor: pointer;
+  margin: auto;
+  width: 300px;
+  height: 500px;
+  margin: auto;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4.2%;
+}
+
+.wrapper .title {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 1px solid #ebedec;
+}
+
+.wrapper .tabs_wrap {
+  padding: 1.85%;
+}
+
+.tabs_wrap ul li {
+  list-style: none;
+}
+
+.wrapper .tabs_wrap ul {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: var(--secondary, #faf6f0);
+  margin: auto;
+  border-radius: 3rem;
+  padding: 0;
+  color: var(--tertiary, #333);
+  border: 1px solid black;
+  border: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+.wrapper .tabs_wrap ul li {
+  width: 20.5vw;
+  text-align: center;
+  background: transparent;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: "Metropolis";
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 1.5%;
+}
+.wrapper .tabs_wrap ul li span {
+  opacity: 70%;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .tabs_wrap ul li span {
+    opacity: 70%;
+    font-size: 2.5vw !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .wrapper .tabs_wrap ul li span {
+    opacity: 70%;
+    font-size: 2.85vw !important;
+  }
+  .Ammenties ul li {
+    padding: 2% 0 !important;
+  }
+}
+
+/* privacy policy css */
+
+/* .privacyPolicy {
+  align-items: center;
+} */
+
+.titleText {
+  font-size: 1.2vw;
+  font-family: "metropolis";
+  text-align: justify;
+  margin: 0 7%;
+  align-self: center;
+  margin-bottom: 7% !important;
+}
+.titleText p {
+  margin-bottom: 2.6%;
+}
+
+.accordion-button::after {
+  background-image: url("src/assets/career/plus.svg");
+  background-color: transparent;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("src/assets/career/minus.svg");
+  background-color: transparent;
+}
+
+h2 button {
+  font-size: 1.2vw;
+}
+
+.expernce {
+  border-top: 1px solid rgba(51, 51, 51, 0.3);
+  font-family: "Metropolis";
+  font-style: normal;
+
+  font-size: 0.875vw;
+  color: #333333;
+  padding: 2vw;
+  padding-left: 6vw;
+}
+
+.expernce1 {
+  border-top: 1.5px solid rgba(51, 51, 51, 0.7);
+}
+
+.accordion-body p img {
+  margin-right: 1.8rem;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+
+.expernce span {
+  font-size: 1.2vw;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  padding-left: 4%;
+  margin-bottom: 0.5%;
+  font-family: "Metropolis";
+}
+
+.accordion-button {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1vw;
+  line-height: 32px;
+  color: #333333;
+  border-radius: 0.875rem;
+  padding: 1.875rem 5vw;
+}
+.accordion {
+  box-shadow: 4px 4px 8px 0px #00000012;
+}
+
+.accordion-item,
+.accordion-item h2,
+.accordion-button,
+.accordion {
+  background-color: #faf6f0;
+  border: none;
+  border-radius: 0.675rem !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #faf6f0;
+  border-color: transparent;
+}
+
+.accordion-button {
+  background: #faf6f0;
+}
+
+.accordion-body {
+  background: #faf6f0;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button::after {
+  width: 1.7rem !important;
+  height: 1.7rem !important;
+  background-size: 1.7rem !important;
+}
+
+.accordion-item {
+  margin-bottom: 0.7vw;
+}
+
+.title2 {
+  font-size: 1.4vw;
+  font-weight: 700;
+  font-family: "metropolis";
+  color: #333333;
+}
+
+/*  */
+
+/* Refund Policy css */
+
+/*  */
+
+@media screen and (max-width: 768px) {
+  .titleText {
+    font-size: 3vw;
+  }
+
+  h2 button {
+    font-size: 3vw;
+  }
+
+  .expernce span {
+    font-size: 3vw;
+  }
+}

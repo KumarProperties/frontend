@@ -1,0 +1,232 @@
+<div class="tesimonial">
+  <div class="headding text-center justify-content-center">
+    <h1 class="text-center">In Their Own Words</h1>
+
+    <p class="text-center">Real Estate Experiences That Warm the Heart</p>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row desktopView">
+      <div class="d-flex">
+        <!-- <div class="dropdown">
+          <a
+            class="btn btn-secondary dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown link
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div> -->
+        <div
+          class="dropdown"
+          *ngIf="false"
+          aria-expanded="false"
+          (focusout)="focusOut($event)"
+          tabindex="1"
+        >
+          <label for="select-year"> Year</label>
+          <div
+            class="select"
+            [(ngModel)]="selectedYear"
+            (change)="filterCards()"
+          >
+            <div class="selectBtn projs" data-type="firstOption">
+              <span>Select</span>
+            </div>
+            <div class="selectDropdown">
+              <div class="option" data-type="firstOption">
+                <div><span> All Years</span></div>
+              </div>
+              <div class="option" data-type="secondOption">
+                <div><span>2020</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown" (focusout)="focusOut($event)" tabindex="1">
+          <label for="select-year"> Project</label>
+          <div
+            class="select"
+            [(ngModel)]="selectedYear"
+            (change)="filterCards()"
+          >
+            <div class="selectBtn projs" data-type="firstOption">
+              <span> Select </span>
+            </div>
+            <div class="selectDropdown">
+              <div
+                class="option"
+                (click)="projectFilter('Kumar Siddhachal')"
+                data-type="firstOption"
+              >
+                <div><span>Kumar Siddhachal</span></div>
+              </div>
+              <div
+                class="option"
+                (click)="projectFilter('Kumar Prospera')"
+                data-type="secondOption"
+              >
+                <div><span>Kumar Prospera</span></div>
+              </div>
+              <div
+                class="option"
+                (click)="projectFilter('Kumar Primus')"
+                data-type="thirdOption"
+              >
+                <div><span>Kumar Primus</span></div>
+              </div>
+              <div
+                class="option"
+                (click)="projectFilter('Kumar Park Infinia')"
+                data-type="thirdOption"
+              >
+                <div><span>Kumar Park Infinia</span></div>
+              </div>
+              <div
+                class="option"
+                (click)="projectFilter('Kumar Princeville')"
+                data-type="thirdOption"
+              >
+                <div><span>Kumar Princeville</span></div>
+              </div>
+              <div
+                class="option"
+                (click)="projectFilter('Kumar Prithvi')"
+                data-type="thirdOption"
+              >
+                <div><span>Kumar Prithvi</span></div>
+              </div>
+
+              <div
+                class="option"
+                (click)="projectFilter('Kumar Picasso')"
+                data-type="thirdOption"
+              >
+                <div><span>Kumar Picasso</span></div>
+              </div>
+              <div
+                class="option"
+                (click)="projectFilter('Princetown Royal')"
+                data-type="thirdOption"
+              >
+                <div><span>Princetown Royal</span></div>
+              </div>
+              <div
+                class="option"
+                (click)="projectFilter('Park Infinia')"
+                data-type="thirdOption"
+              >
+                <div><span>Park Infinia</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-button">
+          <div>
+            <button class="btn" (click)="viewAllCards()">View All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row cards">
+      <div
+        class="card col-lg-3 col-md-4 col-sm-12"
+        *ngFor="
+          let testimonial of filteredData
+            | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index
+        "
+      >
+        <div class="video-container">
+          <iframe class="responsive-video" [src]="testimonial.url" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+        </div>
+        <div class="card-body">
+          <p>{{ testimonial.title }}</p>
+        </div>
+        <div class="footer d-flex container-fluid">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-6 borderRight">
+
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-6"></div>
+        </div>
+      </div>
+      <div class="row" style="text-align: end">
+        <!-- <div class="col-lg-5 col-md-4 col-sm-12"></div> -->
+        <div
+          class="d-flex col-lg-12 col-sm-12 col-md-12 paginationBox justify-content-end"
+        >
+          <div class="itemsperPage">
+            <label for="cards-per-page">Items per page:</label>
+          </div>
+
+          <div class="marRight">
+            <div
+              class="select itemsPrPg-div"
+              (focusout)="focusOut($event)"
+              tabindex="1"
+            >
+              <div
+                class="selectBtn select-Btn itemsPrPg"
+                style="width: 100% !important"
+                data-type="firstOption"
+              >
+                6
+              </div>
+              <div class="selectDropdown small-select">
+                <div
+                  class="option"
+                  (click)="updateTableSize(6)"
+                  value="6"
+                  data-type="firstOption"
+                >
+                  <div><span>6</span></div>
+                </div>
+                <div
+                  class="option"
+                  (click)="updateTableSize(12)"
+                  value="12"
+                  data-type="secondOption"
+                >
+                  <div><span>12</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <span class="pageCount"
+            >{{ tableSize * page - tableSize + 1 }} -
+            {{
+              tableSize * page < filteredData.length
+                ? tableSize * page
+                : filteredData.length
+            }}
+            of {{ filteredData.length }}</span
+          >
+
+          <div>
+            <pagination-controls
+              previousLabel=""
+              nextLabel=""
+              (pageChange)="onTableDataChange($event)"
+            >
+            </pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

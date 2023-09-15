@@ -1,0 +1,912 @@
+/* updated css */
+
+.card-body {
+  align-self: start;
+}
+.option {
+  text-align: center;
+}
+.marRight,
+.pageCount {
+  margin-right: 4.5%;
+}
+.pageCount {
+  padding-top: 0.5%;
+  font-size: 1.25rem;
+  font-family: "Metropolis";
+}
+@media screen and (max-width: 500px) {
+  .itemsperPage {
+    display: none !important;
+  }
+  .cards {
+    margin: 0 0% !important;
+  }
+}
+@media screen and (max-width: 420px) {
+  .view-all-button .btn {
+    margin-top: 32% !important;
+    width: 8rem !important;
+    font-size: 1rem !important;
+  }
+  .select {
+    width: 8rem !important;
+  }
+  .select .selectBtn {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 340px) {
+  .view-all-button .btn {
+    margin-top: 32% !important;
+    width: 7.5rem !important;
+    font-size: 0.9rem !important;
+  }
+  .select {
+    width: 7.5rem !important;
+  }
+  .select .selectBtn {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .marRight {
+    margin-right: 4% !important;
+  }
+  .pageCount {
+    margin-right: 1% !important;
+  }
+}
+@media screen and (max-width: 1465px) {
+  .view-all-button .btn {
+    margin-top: 16% !important;
+  }
+}
+@media screen and (max-width: 1438px) {
+  .view-all-button .btn {
+    margin-top: 18% !important;
+    width: 12rem;
+  }
+  .select {
+    width: 12rem;
+  }
+  .select .selectBtn {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media screen and (min-width: 1438px) {
+  .select {
+    width: 15rem;
+  }
+  .view-all-button .btn {
+    width: 15rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .cards {
+    margin: 0 8%;
+  }
+  .card-body p {
+    font-size: 1.85vw !important;
+  }
+  .borderRight span {
+    font-size: 1.6vw !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* .desktopView {
+    display: none;
+  } */
+
+  .headding h1 {
+    font-size: 8vw !important;
+    margin-top: 10% !important;
+  }
+  .headding p {
+    font-size: 3vw !important;
+  }
+  .yearDropdown {
+    display: none !important;
+  }
+  .view-all-button .btn {
+    margin-top: 22% !important;
+    width: 9rem;
+  }
+  .select {
+    width: 9rem;
+  }
+  .select .selectBtn {
+    font-size: 1rem !important;
+  }
+  .card {
+    width: 80vw !important;
+  }
+  .card iframe {
+    width: 80vw !important;
+  }
+  .card-body p {
+    font-size: 5vw !important;
+  }
+  .borderRight span {
+    font-size: 4.4vw !important;
+  }
+  .card {
+    border-radius: 8vw !important;
+  }
+  .itemsperPage label,
+  .pageCount {
+    font-size: 0.875rem !important;
+  }
+}
+.itemsPrPg {
+  width: 100% !important;
+  border: 1.7px solid #9c9c9c !important;
+  padding: 0 19% !important;
+}
+.itemsPrPg-div {
+  width: 5.5rem !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .itemsPrPg-div {
+    width: 4rem !important;
+  }
+  .itemsPrPg {
+    padding: 10% 15% !important;
+  }
+}
+/*  */
+
+.headding h1 {
+  font-family: "alido";
+  font-style: normal;
+
+  font-size: 6vw;
+  /* line-height: 38px; */
+  /* text-align: justify; */
+
+  margin-top: 3vw;
+  padding-top: 0vw;
+  color: #f27f0c;
+}
+
+.headding p {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.2vw;
+
+  text-align: right;
+  text-transform: capitalize;
+  color: #333333;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1vw;
+  background: #faf6f0;
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 1vw;
+  width: 25vw;
+}
+
+.btn {
+  margin: 0 5px;
+}
+
+.previous-btn,
+.next-btn {
+  border: none;
+}
+
+.form-select {
+  width: 70px;
+}
+
+.cards {
+  padding-top: 3vw;
+}
+
+.card-body p {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5vw;
+  display: flex;
+  align-items: center;
+  color: #333333;
+}
+
+.footer {
+  text-align: center;
+
+  color: black;
+}
+
+.card-per-page {
+  background: #faf6f0;
+  border: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+.card-per-page select {
+  border: 2px solid rgba(51, 51, 51, 0.5);
+  border-radius: 10px;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card-footer span {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1vw;
+  /* line-height: 28px; */
+  display: flex;
+  align-items: center;
+  color: #333333;
+}
+
+.borderRight {
+  /* padding: 1.5vw; */
+  width: fit-content;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-left: 5px;
+  padding-right: 28px;
+}
+
+.borderRight span {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1vw;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  color: #333333;
+}
+
+.card iframe {
+  /* width: 400px; */
+  width: 25vw;
+  height: 250px;
+  border-radius: 20px;
+}
+
+.borderLeft {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2vw;
+  /* line-height: 27px; */
+  display: flex;
+  align-items: center;
+  color: #333333;
+  padding-left: 2vw;
+  justify-content: space-evenly;
+}
+
+.borderLeft span img {
+  width: 21%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dropdown select {
+  padding: 1vw;
+  margin-right: 3vw;
+  border: 1.5px solid #faf6f0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2vw;
+  width: 13vw;
+  /* text-align: center; */
+  padding-left: 3vw;
+  transition: background-color 0.3s ease, width 0.3s ease,
+    border-radius 0.3s ease;
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  background-position: right 2.4rem center;
+}
+
+.form-select {
+  background-color: rgba(250, 246, 240, 0.3) !important;
+}
+
+.dropdown select.fancy-dropdown {
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+.dropdown select.fancy-dropdown:hover {
+  background-color: #e0e0e0;
+}
+
+.dropdown select.fancy-dropdown:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+  border-radius: 12px;
+  width: 220px;
+}
+
+.view-all-button .btn {
+  background: #00000040;
+  border: 2px solid #faf6f0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  /* margin-top: 18%;
+  padding: 5%; */
+  margin-top: 15.45%;
+  padding: 6%;
+  /* color: #faf6f0; */
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.dropdown label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333333;
+}
+
+.paginationBox {
+  margin-top: 6%;
+  padding-bottom: 2%;
+}
+
+.itemsperPage label {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 2.5vw;
+  display: flex;
+  align-items: center;
+  color: #333333;
+}
+.itemsperPage {
+  margin-right: 2%;
+}
+
+/* @media only screen and (min-width: 320px) and (max-width: 479px) {
+  .dropdown label {
+    font-size: 3.4vw;
+  }
+
+  .card {
+    width: 100%;
+    border-radius: 8vw;
+  }
+
+  .paginationBox {
+    margin-left: 0vw;
+  }
+
+  .card iframe {
+    width: 99vw;
+    height: 250px;
+    border-radius: 8vw;
+  }
+
+  .borderRight {
+    padding-left: 0vw;
+    padding-right: 4vw;
+  }
+
+  .borderRight span {
+    font-size: 4.4vw;
+  }
+
+  .borderLeft {
+    font-size: 4.4vw;
+  }
+
+  .borderLeft span img {
+    width: 11.8vw;
+    padding-left: 6vw;
+  }
+
+  .desktopView {
+
+  }
+
+  .dropdown select {
+    padding: 1vw;
+
+    border: 1.5px solid #faf6f0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4vw;
+    width: 31vw;
+    padding-left: 2vw;
+    transition: background-color 0.3s ease, width 0.3s ease,
+      border-radius 0.3s ease;
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 300;
+    background-position: right 1.1rem center;
+  }
+
+  .view-all-button .btn {
+    background: rgba(250, 246, 240, 0.3);
+    border: 1.5px solid #faf6f0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5vw;
+    margin-top: 7vw;
+    padding: 1vw;
+    width: 20vw;
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.9vw;
+    text-align: center;
+    padding: 1.5vw;
+  }
+
+  .headding p {
+    font-size: 3vw;
+  }
+
+  .headding h1 {
+    font-size: 8vw;
+    margin-top: 10%;
+  }
+
+  .card-body p {
+    font-size: 6.8vw;
+  }
+
+  .itemsperPage label {
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2vw;
+    line-height: 2.5vw;
+    display: flex;
+    align-items: center;
+    color: #333333;
+    padding-top: 3vw;
+  }
+} */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .paginationBox {
+    margin-left: 0vw;
+  }
+
+  .card iframe {
+    width: auto;
+    height: 250px;
+    border-radius: 8vw;
+  }
+
+  .borderRight {
+    padding-left: 0vw;
+    padding-right: 4vw;
+  }
+
+  .borderLeft {
+    font-size: 4.4vw;
+  }
+
+  .borderLeft span img {
+    width: 11.8vw;
+    padding-left: 6vw;
+  }
+
+  /* .desktopView {
+
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+  } */
+
+  .paginationBox {
+    margin-left: 0vw;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .paginationBox {
+    margin-left: 0vw !important;
+  }
+  .card {
+    width: 38vw !important;
+  }
+
+  .headding h1 {
+    font-size: 6vw;
+    /* line-height: 38px; */
+    /* text-align: justify; */
+  }
+
+  .headding p {
+    font-size: 2.5vw;
+
+    /* identical to box height, or 95% */
+
+    text-align: right;
+    text-transform: capitalize;
+
+    /* tertiary */
+
+    color: #333333;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+    background: #faf6f0;
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 1vw;
+  }
+
+  .card iframe {
+    /* border-radius: 40px; */
+    width: 38vw;
+    height: 250px;
+    border-radius: 20px;
+  }
+
+  .btn {
+    margin: 0 5px;
+  }
+
+  .previous-btn,
+  .next-btn {
+    border: none;
+  }
+
+  .form-select {
+    width: 70px;
+  }
+
+  .cards {
+    padding-top: 3vw;
+  }
+
+  .card-body p {
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8vw;
+    display: flex;
+    align-items: center;
+    color: #333333;
+  }
+
+  .footer {
+    text-align: center;
+
+    color: black;
+  }
+
+  .card-per-page {
+    background: #faf6f0;
+    border: 1px solid rgba(51, 51, 51, 0.5);
+  }
+
+  .card-per-page select {
+    border: 2px solid rgba(51, 51, 51, 0.5);
+    border-radius: 10px;
+  }
+
+  .card a {
+    text-decoration: none;
+  }
+
+  .card-footer span {
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    /* line-height: 28px; */
+    display: flex;
+    align-items: center;
+    color: #333333;
+  }
+
+  .borderRight {
+    /* padding: 1.5vw; */
+    width: fit-content;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: 5px;
+    padding-right: 28px;
+  }
+
+  .borderRight span {
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.1vw;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #333333;
+  }
+
+  .card iframe {
+    height: 250px;
+    border-radius: 20px;
+  }
+
+  .borderLeft {
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2vw;
+    /* line-height: 27px; */
+    display: flex;
+    align-items: center;
+    color: #333333;
+    padding-left: 2vw;
+  }
+
+  .borderLeft span img {
+    width: 1.2vw;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .dropdown select {
+    padding: 1vw;
+    margin-right: 3vw;
+    border: 1.5px solid #faf6f0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2vw;
+    width: 13vw;
+    /* text-align: center; */
+    padding-left: 2vw;
+    transition: background-color 0.3s ease, width 0.3s ease,
+      border-radius 0.3s ease;
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    background-position: right 2.4rem center;
+  }
+
+  .form-select {
+    background-color: rgba(250, 246, 240, 0.3) !important;
+  }
+
+  .dropdown select.fancy-dropdown {
+    background-color: #f1f1f1;
+    color: #555;
+  }
+
+  .dropdown select.fancy-dropdown:hover {
+    background-color: #e0e0e0;
+  }
+
+  .dropdown select.fancy-dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+    border-radius: 12px;
+    width: 220px;
+  }
+  /*
+  .view-all-button .btn {
+    background: rgba(250, 246, 240, 0.3);
+    border: 1.5px solid #faf6f0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2vw;
+    margin-top: 25px;
+    padding: 1vw;
+    width: 13vw;
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2vw;
+
+    text-align: center;
+  } */
+
+  .dropdown label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+
+    color: #333333;
+  }
+
+  .paginationBox {
+    justify-content: space-evenly;
+
+    margin-top: 3vw;
+    padding-bottom: 4vw;
+  }
+}
+
+.cards {
+  margin: 0 8%;
+}
+
+.headding {
+  padding-bottom: 2vw;
+}
+
+.select {
+  position: relative;
+}
+
+.selectDropdown {
+  border-radius: 25px !important;
+  border: 2px solid #faf6f0 !important;
+}
+
+.selectDropdown .option div {
+  border-bottom: 1.5px solid #faf6f0;
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+
+.select .selectBtn {
+  padding: 8% 0;
+  border-radius: 50px;
+  width: 100%;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #00000040;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(5px); */
+}
+
+.select .selectBtn:after {
+  content: "";
+  position: absolute;
+  top: 49%;
+  right: 47px;
+
+  width: 6px;
+  height: 6px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  transition: 0.2s ease;
+}
+.select .select-Btn:after {
+  content: url("../../../assets/tesimonials/diamond2.png") !important;
+  position: absolute;
+  top: 49%;
+  right: 47px;
+  border: 0 !important;
+  width: 6px;
+  height: 6px;
+  -webkit-transform: translateY(0) rotate(0) !important;
+
+  transition: 0.2s ease;
+}
+
+.select .projs:after {
+  right: 25px !important;
+}
+
+.select .selectBtn.toggle {
+  border-radius: 3px 3px 0 0;
+}
+
+.select .selectBtn.toggle:after {
+  -webkit-transform: translateY(-50%) rotate(-135deg);
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.select .selectDropdown {
+  position: absolute;
+  top: 115%;
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+  background: var(--bg1);
+  border-top: 1px solid #eee;
+  z-index: 1;
+  background: #3333335c;
+  color: #faf6f0;
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  visibility: hidden;
+  transition: 0.2s ease;
+  backdrop-filter: blur(23px);
+}
+
+.select .selectDropdown .option {
+  padding: 0 10% !important;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.option span {
+  color: #faf6f0;
+  font-family: "metropolis";
+  opacity: 100%;
+}
+
+.select .selectDropdown .option:hover {
+  background: #333333;
+}
+
+.select .selectDropdown.toggle {
+  visibility: visible;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.desktopView {
+  padding-left: 10%;
+}
+
+.desktopView .d-flex {
+  gap: 2vw;
+}
+
+.dropdown label {
+  margin-bottom: 5%;
+}
+
+.selectBtn {
+  text-align: center;
+  font-family: Metropolis;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+  border: 2px solid #faf6f0;
+}
+
+.select-Btn {
+  padding-bottom: 0.8vw !important;
+  padding-top: 0.8vw !important;
+  border-radius: 12px !important;
+  width: 40% !important;
+  text-align: start !important;
+  font-family: Metropolis !important;
+  font-size: 18px !important;
+
+  border-radius: 7px !important;
+}
+
+.select-Btn::after {
+  top: 31% !important;
+  right: 30% !important;
+  width: 7px !important;
+  height: 7px !important;
+}
+
+.small-select {
+  z-index: 1;
+
+  height: 68px !important;
+  text-align: center !important;
+
+  border-radius: 5px !important;
+}
+
+.small-select .option {
+  padding: 4px !important;
+}

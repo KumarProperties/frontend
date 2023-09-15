@@ -1,0 +1,36 @@
+<div class="modal fade" id="cookie" tabindex="-1" aria-labelledby="cookieLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <div class="title">
+          <span>Cookie Consent</span>
+
+        </div>
+
+        <img src="assets/common/crossBtn.png" alt="" (click)="closeCookie()" type="button" class="close-btn"
+          data-bs-dismiss="modal" />
+      </div>
+      <div class="modal-body">
+
+
+
+
+            <div class="text">
+
+
+
+                  <span>This website stores cookies on your computer. These cookies are used to collect information about how you interact with our website and allow us to remember you. We use this information in order to improve and customize your browsing experience and for analytics and metrics about our visitors both on this website and other media. To find out more about the cookies we use, see our <a routerLink="/policies">Privacy Policy</a>.</span>
+
+
+            </div>
+            <div class="acceptBtn">
+              <a (click)="acceptCookies()">
+              <img  src="../../../assets/common/cookieAccept.png" alt="">
+            </a>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>

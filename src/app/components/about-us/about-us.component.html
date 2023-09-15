@@ -1,0 +1,405 @@
+<div class="page">
+  <div class="container-fluid aboutKumar" [ngClass]="{ makeBlack: selectedTab === 'DirectorsPage' }">
+    <div class="wrapper">
+      <div class="tabs_wrap container-fluid p-0 mt-2">
+        <div class="Ammenties">
+          <ul>
+            <li (click)="selectTab('AboutKumar')" [ngClass]="{ active: selectedTab === 'AboutKumar' }"
+              data-tabs="AboutKumar">
+              <span>About Kumar Corp</span>
+            </li>
+            <li (click)="selectTab('corporateProfile')" [ngClass]="{ active: selectedTab === 'corporateProfile' }"
+              data-tabs="corporateProfile">
+              <span>Corporate Profile</span>
+            </li>
+            <li (click)="selectTab('DirectorsPage')" [ngClass]="{ active: selectedTab === 'DirectorsPage' }"
+              data-tabs="DirectorsPage">
+              <span>Director's Section</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container-fluid aboutKumarTab">
+        <div [ngClass]="{
+            'd-block': selectedTab === 'AboutKumar',
+            'd-none': selectedTab != 'AboutKumar'
+          }" class="content">
+          <div class="titleDiv">
+            <div class="overflow-hidden">
+              <h1 class="container1">
+                Designing and constructing fine homes is something we think is
+                an honor that has been accorded to us.
+              </h1>
+            </div>
+            <div class="text-wrapper overflow-hidden">
+              <h1 class="limitless-sky">A LIMITLESS SKY</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container WEBelieve" [ngClass]="{
+      'd-block': selectedTab === 'AboutKumar',
+      'd-none': selectedTab !== 'AboutKumar'
+    }" class="about-kumar-corp content">
+    <div class="row web">
+      <div class="col-lg-6 col-xl-6 col-md-6 leftWEbelieve">
+        <div class="overflow-hidden">
+          <h1>We believe</h1>
+        </div>
+
+        <div class="text about-desc overflow-hidden">
+          <p>
+            It is a rare opportunity to unite many families under one limitless
+            sky, or as we think of it, a limitless roof of the world.
+            <br />
+            <br />
+
+            In our legacy, we have had the honor of building the most
+            contemporary homes across three skylines, Pune, Mumbai & Bengaluru.
+          </p>
+        </div>
+        <div class="img1 overflow-hidden" style="margin-top: 5%; margin-right: 4%">
+          <img style="width: 73%" src="assets/about-us/aboutNew2.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-xl-6 col-md-6 RightBelieve">
+        <div class="img2 overflow-hidden">
+          <img src="assets/about-us/aboutBlueImg.png" alt="" />
+        </div>
+        <div class="RightText2 overflow-hidden col-lg-10 col-xl-12">
+          <p>
+            Contemporary for us means, going above and beyond to build living
+            architecture within breathable urban landscapes, equipped with the
+            latest technology for life's conveniences.
+            <br />
+            <br />
+            Urban living should be taken to its zenith, right here where your
+            family live, <span class="text-bold">under a Limitless sky</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mob-RightText2 col-lg-10 col-xl-12">
+      <p>
+        Contemporary for us means, going above and beyond to build living
+        architecture within breathable urban landscapes, equipped with the
+        latest technology for life's conveniences.
+        <br />
+        <br />
+        Urban living should be taken to its zenith, right here where your family
+        live, <span class="text-bold">under a Limitless sky</span>.
+      </p>
+    </div>
+    <div class="container-fluid TimeLine mt-5">
+      <h1>Timeline</h1>
+      <div class="row" style="margin-top: 7%; margin-bottom: 7%">
+        <div class="container-fluid DateScroller overflow-hidden mt-3">
+          <div class="date-scroller-wrapper d-flex">
+            <div class="dates-picker ">
+              <p class="date" [class.active]="isActive(date)" (click)="setActive(date)"
+                *ngFor="let date of dates; index as i" [ngClass]="{
+                  'first-year': i == 0,
+                  'last-year': i == dates.length - 1
+                }">
+                {{ date }}
+              </p>
+            </div>
+            <div class="clean-date">
+              <p> {{tlIndex}} </p>
+              <div class="wrapper d-none">
+
+                <p class="inactive-date" [ngClass]="tlIndex1">{{tlIndex1}}</p>
+                <p class="inactive-date" [ngClass]="tlIndex2">{{tlIndex2}}</p>
+              </div>
+            </div>
+            <div class="imgText">
+              <div class="text-wrapper">
+
+                <p class="marq-text mb-0">{{ tlIndex && tlImages[tlIndex]?.title}}</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="imgCarousel ml-2" style="border-radius: 2rem">
+            <div class="imgContainer">
+              <div class="images">
+                <img [src]="tlImages[tlIndex]?.url" alt="" class="img-fluid py-2" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid brandPromise">
+      <div class="overflow-hidden">
+        <h1>Brand Promise</h1>
+      </div>
+
+      <div class="brandText overflow-hidden">
+        <p>
+          We build real estate properties that make the environment safe,
+          secured, aspiring and beyond ordinary.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="corporateProfile container-fluid p-0" [ngClass]="{
+      'd-block': selectedTab === 'corporateProfile',
+      'd-none': selectedTab != 'corporateProfile'
+    }">
+    <div class="corporateImg container" style="position: relative">
+      <img src=" assets/corporateProfile/topBg.png" alt="" />
+      <img class="subImg" src=" assets/corporateProfile/rightPartImg.png" alt="" />
+    </div>
+    <div class="row">
+      <div class="corporateProfile-wrapper container-fluid">
+        <div class="leftPart row">
+          <div class="col-lg-6 col-xl-6 col-md-6 leftText overflow-hidden">
+            <div class="leftTextPara">
+              <p>
+                Founded by Mr. K.H. Oswal on 15 August 1966, the Kumar Properties
+                Group is a well diversified, value driven enterprise. 135+ projects
+                completed and More than 40,000 satisfied and happy families are
+                our brand ambassadors and our true strength.
+              </p>
+              <p style="padding-top: 0">
+                Over 40,000 happy families from diverse socio-economic and
+                cultural background, over 1,000 satisfied large, medium and small
+                businesses, all enjoying the comforts and pleasures of living in
+                environment-friendly, well-designed, fully-equipped residential
+                complexes, or working out of swanky commercial premises.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-6 left-part-img-one">
+            <!-- <div class="leftPartImg overflow-hidden">
+              <img src=" assets/corporateProfile/rightPartImg.png" alt="" />
+            </div> -->
+          </div>
+        </div>
+
+        <!-- <div class="rightPart row">
+          <div class="col-lg-6 col-xl-6 col-md-6">
+            <div class="rightPartImg overflow-hidden">
+              <img src="assets/corporateProfile/leftPartImg.png" alt="" />
+            </div>
+          </div>
+
+          <div class="rightText overflow-hidden col-xl-6 col-md-6">
+            <p>
+
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="row mt-5 RealEstatemarket">
+      <div class="col-lg-6 col-md-6 col-xl-5">
+        <div class="imgMain overflow-hidden">
+          <img src="assets/about-us/imgSection-mainImg.jpg" alt="" />
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-xl-6 TextSection">
+        <div class="TextSectionPara">
+
+
+          <p>
+            That is the Kumar Properties’ record of achievement in core service
+            offerings. A record of not mere construction, but creation of complete
+            living, working and business spaces, with the latest amenities and
+            facilities integrated in a holistic manner and backed by lifelong
+            maintenance.
+          </p>
+          <p style="padding-top: 2%">
+            One of the largest players in Pune’s real estate market, which has
+            constructed more than 35 million sq.ft., it is a brand that commands a
+            premium over other real estate developers. Providing complete
+            solutions to clients, the Group is a symbol of trust and integrity
+            built through its superior quality work, timely project completion and
+            personalized services.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="only-for-mobile-img">
+      <img src="assets/projectDetail/projectDetail-building.png" alt="" />
+    </div>
+    <div class="Accordian-Footer container-fluid mt-5">
+      <div class="row FooterBoxShadow">
+        <div style="padding-bottom: 4.5%;" class="accordians col-lg-6 col-md-6 col-sm-12">
+          <div class="accordion">
+            <div *ngFor="let item of accordionItems" class="content-container" (click)="toggleAccordion(item)"
+              [class.active]="item.isOpen">
+              <div class="question">
+                <span>{{ item.question }}</span>
+              </div>
+              <div class="answer" [innerHTML]="item.answer"></div>
+            </div>
+          </div>
+        </div>
+        <div class="imageArea col-lg-6 col-md-6 col-sm-12 col-xs-12 pe-0">
+          <img [src]="activeImage" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="{
+      'd-block': selectedTab === 'DirectorsPage',
+      'd-none': selectedTab != 'DirectorsPage'
+    }" class="DirectorsDetails">
+    <div class="PhotoWithText row" [ngClass]="{ background: selectedTab === 'DirectorsPage' }">
+      <div class="container d-flex" style="padding: 0 4%">
+        <div class="DirectorsPic col-lg-6 col-md-6 col-xl-6">
+          <div class="m-auto directorOnlyDesk">
+            <img src="assets/directorsPage/HiteshJain.png" alt="" />
+          </div>
+        </div>
+
+        <div class="rightCaption col-lg-6 col-md-6 col-xl-6">
+          <div class="animate-para">
+            <div class="animate">
+              <p class="para">
+                “A brand is not just the product, however excellent it might be.
+                It is the entire ecosystem of how we interact with our customer
+                at every touch point, how we understand his needs, and how we
+                live up to the trust that he has reposed in us. I want to work
+                towards ensuring that Kumar Corp is a name that symbolizes all
+                that is delightful in our industry –
+              </p>
+
+              <h2>design, warmth, creativity, economy, and indeed value.”</h2>
+            </div>
+          </div>
+
+          <div class="animate-names">
+            <div class="name directorOnlyDesk col-xl-6 col-lg-6 col-md-6">
+              <p class="text-white" style="text-align: end">-MR. HITESH JAIN</p>
+
+              <p class="leadership" style="text-align: end; padding-top: 0 !important">
+                TAKING LEADERSHIP TO THE NEXT LEVEL
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row directorOnlyMob" style="background: #616062">
+        <div class="DirectorsPic col-lg-6 col-md-6 col-xl-5 col-sm-6 col-xs-6" style="width: 50%">
+          <img style="width: 100%" src="assets/directorsPage/HiteshJain.png" alt="" />
+        </div>
+        <div class="mob-name col-xl-0 col-lg-0 col-md-0 col-sm-6 col-xs-6" style="width: 50%">
+          <p class="text-white" style="text-align: end; font-size: 4vw">
+            -MR. HITESH JAIN
+          </p>
+
+          <p class="leadership" style="text-align: end; padding-top: 0 !important">
+            TAKING LEADERSHIP TO THE NEXT LEVEL
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="STEELINHISVEINS" [ngClass]="{ 'background-tranparent': selectedTab === 'DirectorsPage' }">
+      <div class="firstHeadding" style="text-align: center">
+        <span class="d-inline-block">Steel in his veins</span>
+      </div>
+      <div class="row justify-centent-around SteelContainer">
+        <div class="" style="text-align: center; margin-top: 5%">
+          <div class="animate-steelText" style="overflow: hidden; text-align: justify">
+            <p>
+              They say you are as strong as your foundation. A sterling example
+              of this adage is Mr. Hitesh Jain, Director, Kumar Corp. Coming
+              from a family that has a rich legacy of excellence in real estate,
+              Mr. Jain, at a relatively young age of 42, was able to build on
+              these inherent advantages, with steely determination and a
+              flexible mind that is open to new, innovative ideas.
+            </p>
+          </div>
+        </div>
+        <!-- <div class="SteelImg col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="mainSteelImg">
+            <img src="assets/directorsPage/SteelMainImg.png" alt="" />
+          </div>
+          <div class="smallImgSteel">
+            <img src="assets/directorsPage/SteelImgSmall.png" alt="" />
+          </div>
+        </div> -->
+      </div>
+
+      <div class="row Section2SteelViens">
+        <div class="row d-flex rotateReverse">
+          <div class="text2Steel" style="text-align: justify">
+            <span style="display: block">
+              On the academic front, he holds a Bachelor’s Degree in Civil
+              Engineering from MIT, Pune and this was further fortified with a
+              Master’s in Business Administration degree from University of
+              Cardiff, UK.
+            </span>
+          </div>
+          <!-- <div class="img2Steel col-lg-4 col-md-4">
+            <img src="assets/directorsPage/steel2small.png" alt="" />
+          </div> -->
+        </div>
+
+        <div class="container row experience-container d-flex">
+          <!-- <div
+            class="steel2Small col-lg-7 justify-centent-center col-sm-12 col-md-7"
+          >
+            <img src="assets/directorsPage/steel2Img.png" alt="" />
+          </div> -->
+
+          <div class="steel2Text" style="text-align: center">
+            <div class="animate-experience" style="text-align: justify">
+              <span class="d-block">
+                His experience abroad has given him new, exciting perspectives
+                on the industry and the ever ardent student in him has been keen
+                to bring those learnings into his work here.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row Section3SteelViens animate-lastsec" style="margin-bottom: 5%">
+        <div class="leftSection">
+          <div class="text1" style="text-align: justify">
+            <span class="d-block">
+              At Kumar Corp, Mr. Jain oversees the engineering aspect of the
+              construction, and he is instrumental in implementing a wide array
+              of new age technologies that have gone a long way in the
+              organisation being seen as a flag bearer of innovative
+              technologies in the industry.
+            </span>
+          </div>
+          <!-- <div class="col-lg-6 col-md-6 middleImg" style="overflow: hidden">
+            <img
+              class="d-block"
+              src="assets/directorsPage/middleImgS3.png"
+              alt=""
+            />
+          </div> -->
+          <div class="text2" style="text-align: justify">
+            <span class="d-block">
+              Today, Kumar Corp has gone from strength to strength, and even
+              bravely weathered the storm which engulfed the entire industry not
+              too long ago. This period was a huge learning experience for Mr.
+              Jain and he has come out much stronger, and much more adept at
+              blending ground realities with the oretical practices.
+            </span>
+          </div>
+        </div>
+
+        <!-- <div class="rightSection col-lg-6 col-md-6" style="overflow: hidden">
+          <img src=" assets/corporateProfile/AccordianImage.png" alt="" />
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

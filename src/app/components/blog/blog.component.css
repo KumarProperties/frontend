@@ -1,0 +1,136 @@
+.margins {
+  margin: 0 8%;
+}
+
+.title,
+.animate-img,
+.desc,
+.content1Img,
+.content2Img {
+  overflow: hidden;
+}
+
+.title span {
+  font-family: "alido";
+  font-size: 4vw;
+  line-height: 1.2;
+  display: inline-block;
+}
+
+.textDiv {
+  padding-right: 3%;
+}
+.date {
+  margin-top: 10%;
+  overflow: hidden;
+}
+.date span {
+  font-family: "metropolis";
+  font-size: 1.35vw;
+}
+.textDiv {
+  position: relative;
+}
+
+.content1 {
+  margin-top: 10%;
+  padding-right: 5%;
+  overflow: hidden;
+}
+.content2 {
+  margin-top: 10%;
+  padding-left: 5%;
+  overflow: hidden;
+}
+
+.content1 span,
+.content2 span,
+.desc span {
+  font-family: "metropolis";
+  font-size: 1.2vw;
+  display: block;
+}
+
+.pointerTitle {
+  font-size: 1.5vw;
+  font-family: "metropolis";
+  font-weight: 600;
+  margin-bottom: 2%;
+}
+.text {
+  font-size: 1.2vw;
+  font-family: "metropolis";
+}
+.points {
+  margin-bottom: 3%;
+}
+
+.contentImg {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .texts {
+    position: absolute;
+    /* top: 55%; */
+    bottom: 5%;
+  }
+}
+
+.calendar {
+  width: 6.5%;
+  margin-right: 4%;
+}
+
+@media screen and (max-width: 767px) {
+  .titleSection {
+    flex-direction: column-reverse;
+  }
+  .buttonDiv {
+    display: none;
+  }
+  .titleSection {
+    margin-top: 5%;
+  }
+
+  .texts {
+    margin-top: 10%;
+  }
+  .title span {
+    font-size: 9vw !important;
+  }
+  .date span {
+    font-size: 3.35vw !important;
+  }
+  .calendar {
+    width: 8.5% !important;
+  }
+
+  .pointerTitle {
+    font-size: 3.5vw;
+  }
+  .text {
+    font-size: 3.2vw;
+    font-family: "metropolis";
+  }
+  .content1 span,
+  .content2 span,
+  .desc span {
+    font-family: "metropolis";
+    font-size: 3.2vw;
+  }
+  .content2Div {
+    flex-direction: column-reverse;
+  }
+  .content1Div,
+  .content2Div {
+    margin-bottom: 3%;
+  }
+  .content1,
+  .content2 {
+    margin-bottom: 4%;
+  }
+}

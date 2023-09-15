@@ -1,0 +1,195 @@
+<div class="GoogleMaps">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 p-0">
+        <div *ngIf="toggleMapPune" class="map position-relative mb-5">
+          <iframe
+
+            width=" 100%"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.420564070867!2d73.87750301489261!3d18.509887587415214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c048315faa71%3A0x65309a306dbc433b!2sKumar%20Properties%20-%20Corporate%20Office!5e0!3m2!1sen!2sin!4v1690770701170!5m2!1sen!2sin"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+
+
+          <div class="twoButtons d-flex">
+            <div>
+              <button class="btn GetLocation" (click)="getLocation('https://maps.google.com/maps/dir//Kumar+Properties+-+Corporate+Office+Kumar+Capital+2413,+East+St,+Camp+Pune,+Maharashtra+411001/@18.5098876,73.8796917,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3bc2c048315faa71:0x65309a306dbc433b')">
+                Get Location
+              </button>
+            </div>
+            <div>
+              <button class="btn Share" (click)="share('https://maps.google.com/maps/dir//Kumar+Properties+-+Corporate+Office+Kumar+Capital+2413,+East+St,+Camp+Pune,+Maharashtra+411001/@18.5098876,73.8796917,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3bc2c048315faa71:0x65309a306dbc433b')">Share</button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="toggleMapMumbai" class="map position-relative mb-5">
+          <iframe
+
+            width=" 100%"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120686.09106658926!2d72.82265376549236!3d19.044367446531915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d10772ca5ffd%3A0xa9acc39d563f982c!2sKumar%20Properties%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1691135955765!5m2!1sen!2sin"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+
+
+          <div class="twoButtons d-flex">
+            <div>
+              <button class="btn GetLocation" (click)="getLocation('https://goo.gl/maps/kFnrjSn81hicuq3T8')">
+                Get Location
+              </button>
+            </div>
+            <div>
+              <button class="btn Share" (click)="share('https://goo.gl/maps/kFnrjSn81hicuq3T8')">Share</button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="toggleMapBengaluru" class="map position-relative mb-5">
+          <iframe
+
+            width=" 100%"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31102.06340794359!2d77.54432527431642!3d12.987329000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae22d67d49a92d%3A0xad734413c1e88160!2sKumar%20Properties!5e0!3m2!1sen!2sin!4v1691136083003!5m2!1sen!2sin"
+            height="350"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+
+
+          <div class="twoButtons d-flex">
+            <div>
+              <button class="btn GetLocation" (click)="getLocation('https://goo.gl/maps/X343ZJiaw6b5VGc7A')">
+                Get Location
+              </button>
+            </div>
+            <div>
+              <button class="btn Share" (click)="share('https://goo.gl/maps/X343ZJiaw6b5VGc7A')">Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 p-0">
+        <div id="sidebar-text">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button text-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                  (click)="toggleAccordion('pune')"
+                >
+                  Pune – Corporate Office
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body text-white">
+                  <p>2413 East Street, Pune, India</p>
+                  <p>+91 (20) 67641660/661/662/663/665/635</p>
+                  <p>+91 (20) 30583660/661/662/663/665/635</p>
+                  <p>Fax: +91 20 26353365</p>
+                  <strong>Sales Enquiry: </strong>
+                  <a href="mailto:sales@kumarworld.com">
+                    sales@kumarworld.com</a
+                  >
+                  <p>Phone:<a href="tel:+919595110011" target="_blank"> +91 9595 110011</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button bg-dark text-white collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                  (click)="toggleAccordion('mumbai')"
+                >
+                  Mumbai Office
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse text-white"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+
+                  <p>
+                    21,
+                    Hazarimal Somani Marg, Waudby Road, Opp. Bombay Gymkhana,
+                    Fort, Mumbai – 400 001, India.
+                  </p>
+                  <p>Phone : 91-22-2209 4876, 2209 4797</p>
+                  <p>Fax : 91-22-2209 4796</p>
+                  <strong>Sales Enquiry: </strong>
+                  <a href="tel:+919595110011">+91 9595110011</a>
+                  <p>Fax: (022) 22094796</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed text-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                  (click)="toggleAccordion('bengaluru')"
+                >
+                  Bengaluru Office
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body text-white">
+
+                  <p>
+                   33, Crescent Road High
+                    Grounds, Opp Taj West End Hotel, Bengaluru, India
+                  </p>
+                  <p>Phone : +91 (80) 41280992</p>
+                  <p>Fax : 91-22-2209 4796</p>
+                  <strong>Sales Enquiry: </strong>
+                  <a href="mailto:bangalore@kumarworld.com"
+                    >bangalore@kumarworld.com</a
+                  >
+                  <p>Call: <a href="tel: +917676777111" target="_blank">+91 76 76777111</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

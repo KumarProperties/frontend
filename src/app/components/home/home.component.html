@@ -1,0 +1,431 @@
+<!-- SECTION FIRST  -->
+
+<div class="container-fluid section-first position-relative">
+  <div class="row d-flex TopCarousel">
+    <div class="col-lg-5 col-md-5 col-sm-12 carouselText">
+      <div style="overflow: hidden">
+        <div class="animate-carousel-text" #carouselText>
+          <h1 class="h1">
+            {{ activeSlide && activeSlide?.title }}
+            <span>
+              {{ activeSlide && activeSlide?.subtitle }}
+            </span>
+          </h1>
+          <span class="bannerText">{{ activeSlide && activeSlide?.text }}</span>
+          <div routerLink="/projects" class="knowmore">
+            <button class="btn KnowMoreBtn">
+              Know More <img src="assets/common/Vector.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel col-lg-7 col-md-7 col-sm-12 d-flex">
+      <div class="swiper" #swiper>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" [ngClass]="'slide-' + i" *ngFor="let slide of slides; index as i">
+            <div class="image-container">
+              <img [src]="slide.image" alt="" class="img-fluid" style="width: 100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-custom-bullets">
+    <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-vertical"></div>
+  </div>
+</div>
+
+<!-- SECTION SECOND  -->
+
+<div class="container-fluid projectShowCaseCarousel-wrapper" style="overflow: hidden">
+  <div class="row projectShowCaseCarousel">
+    <div class="image2 col-lg-4 col-sm-12">
+      <img src="assets/home/image1.png" alt="" />
+    </div>
+    <div class="col-lg-8 imgText" *ngIf="isLoaded">
+      <div class="image1 col-lg-4 col-sm-12 col-xs-12">
+        <img src="assets/home/image2.png" alt="" />
+      </div>
+
+      <div class="textPart col-lg-6 col-sm-6 col-xs-12">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                135+ Projects Completed
+                <img src="assets/home/projectsCompletedIcon.png" alt="" width="32px" class="ms-3" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="assets/home/OnGoingProjectsIcon.png" alt="" width="38px" class="me-3" />
+                15+ ongoing projects
+              </td>
+            </tr>
+            <tr>
+              <td>
+                40k Happy Customers
+                <img src="assets/home/HappyFamlyIcon.png" alt="" width="38px" class="ms-3" />
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 0">
+                <img src="assets/home/constructionIcon.png" alt="" width="9%" class="me-1" />
+                35 Million Sq. Ft constructed
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION THIRD  -->
+
+<div class="container-fluid animate-all-images pt-4 desktop-world">
+  <div class="row allImages">
+    <div class="textWorld col-lg-8">
+      <h1 class="text-center">World of Kumar</h1>
+    </div>
+    <div class="col-lg-12 positionedImage">
+      <div class="upword-Img-building">
+        <img src="assets/home/upword-Img-building.png" alt="" />
+        <h1 class="quality-Assurance">Quality-Assurance</h1>
+      </div>
+      <div class="centerImg">
+        <h1 class="Premium">Premium</h1>
+        <img src="assets/home/img1-buildings.png" alt="" class="scale-image" />
+      </div>
+      <div class="downwordImage">
+        <img src="assets/home/downwordImage.png" alt="" class="animate-downword-image" />
+      </div>
+    </div>
+    <br />
+    <div class="worldKumarPara col-lg-7">
+      <div class="innerText">
+        <p class="inner-text-animate">
+          With the vision to offer unparalleled living, working, and business
+          spaces that redefine the standards of excellence.We strive to maintain
+          leadership in the industry through innovative design, cutting-edge
+          technology, and craftsmanship, ultimately delivering nothing but the
+          best to our customers.
+        </p>
+        <p class="boldText inner-text-animate">
+          Projects in Mumbai, Pune and Bangalore
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-worldOfKumar">
+  <span class="worldTitle">World of kumar</span>
+
+  <div class="worldImages">
+    <div class="centerImgDiv">
+      <span class="premium">Premium</span><br />
+
+      <img style="width: 70%" src="assets/home/img1-buildings.png" alt="" />
+    </div>
+
+    <img class="worldImg1" src="assets/home/upword-Img-building.png" alt="" />
+    <img class="worldImg3" src="assets/home/downwordImage.png" alt="" />
+
+    <div class="quality">Quality-Assurance</div>
+  </div>
+  <div style="margin: 0 5%; text-align: justify; margin-bottom: 4.5%">
+    <span class="worldText">
+      Founded by Mr. K.H. Oswal on 15 August 1966, the Kumar Properties Group is
+      a well diversified, value driven enterprise. That is the Kumar Properties’
+      record of achievement in core service offerings. A record of not mere
+      construction, but creation of complete living, working and business
+      spaces, with the latest amenities and facilities integrated in a holistic
+      manner and backed by lifelong maintenance.
+    </span>
+    <br />
+    <span class="worldText" style="display: inline-block; font-weight: 600; margin-top: 4.5%">Projects done in
+      Magarpatta, Phursungi, Undri, Market Yard, Baner,
+      Wadgaon Sheri</span>
+  </div>
+</div>
+
+<div class="container-fluid FourthSection mb-5 d-flex flex-column">
+  <div class="view-all projects-animate d-flex text-white mt-5 align-items-center cursor--pointer">
+    <hr style="width: 20vw" />
+    &nbsp;&nbsp;
+    <span routerLink="/projects" style="font-family: 'Metropolis'; opacity: 0.6; color: #dedede">View All &nbsp;</span>
+    <img routerLink="/projects" class="right-arrow" src="./assets/common/blogs-left-arrow.svg" alt="" />
+  </div>
+
+  <div>
+    <div class="swiper properties" #swiper>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let project of projects?.apartments; index as i">
+          <div class="ImgCenter">
+            <div>
+              <div class="propertyDetail">
+                <div class="propertyDetail-wrapper">
+                  <div>
+                    <span class="name">{{ project.title }}</span>
+                  </div>
+                  <div>
+                    <span class="location">{{
+                      project.tags[0] != "Commercial"
+                      ? project.sub_title
+                      : project.tags[0]
+                      }}</span>
+                  </div>
+                </div>
+                <div *ngIf="project.tags[0] != 'Commercial'" class="propertydetail-wrapper2">
+                  <div *ngIf="project.tags[0]" class="TwobhK d-flex align-items-center gap-4 mt-3">
+                    <div class="circular-wrapper1">
+                      <img class="img-fluid" src="assets/home/2bhk.png" alt="" />
+                    </div>
+                    <div class="bhk-content-wrapper">
+                      <p class="fw-bold">
+                        {{ project.tags[0].slice(0,5) == ('2 BHK'||'3 BHK') ? project.tags[0].slice( 0,5) :""
+                        }}
+                      </p>
+                      <p class="mb-0"> {{ project.tags[0].slice(0,5) == ('2 BHK'||'3 BHK') ? project.tags[0].slice(5) :project.tags[0]
+                        }}</p>
+                    </div>
+                  </div>
+                  <div *ngIf="project.tags[1]" class="TwobhK d-flex align-items-center gap-4 mt-4">
+                    <div class="circular-wrapper2">
+                      <img src="assets/home/3bhk.png" alt="" />
+                    </div>
+                    <div class="bhk-content-wrapper">
+
+
+                      <p class="fw-bold">
+                        {{ project.tags[1].slice(0,5) == '3 BHK' ? project.tags[1].slice( 0,5) :""
+                        }}
+                      </p>
+                      <p class="mb-0"> {{ project.tags[1].slice(0,5) == '3 BHK' ? project.tags[1].slice(5) :project.tags[1]
+                        }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: inline-block; position: relative" class="image-animate hoverableImg">
+              <div class="explore cursor--pointer" [routerLink]="'/project/' + project._id">
+                Explore
+                <img src="assets/home/exploreArrow.png" alt="" style="width: 28%; margin-left: 3%" />
+              </div>
+              <img class="mainImg" [src]="project.title_image[0]" alt="" />
+            </div>
+
+            <div *ngIf="project.gallery_medias[0]" class="leftCornerImg">
+              <img [src]="project.gallery_medias[0]" alt="" class="from-top-animate" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="rightBelowCornerBox">
+        <div class="hr d-flex align-items-center gap-2">
+          <span  class="mr-1">
+            <img src="./assets/common/blogs-left-arrow.svg" alt="" class="prev-prop swiper-button-prev  right-left" />
+          </span>
+          <span >
+            <img src="./assets/common/blogs-left-arrow.svg" alt="" class="next-prop swiper-button-next right-arrow" />
+          </span>
+          <hr class="w-50" />
+          <!-- <p style="font-family: 'Metropolis'; opacity: 0.6; color: #dedede" class="mb-0">
+            {{ propSwiperIndex }} - {{ projects?.apartments?.length }}
+          </p> -->
+          <div class="swiper-pagination-prop"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid FIFTHSECTION">
+  <div class="headding-wrapper">
+    <div class="headding animate-words-from-customers">
+      <h1>Words from our customers</h1>
+    </div>
+    <div class="view-all d-flex animate-customers-view-all" style="opacity: 0.699999988079071"
+      (click)="routeTo('testimonials')">
+      <hr style="width: 20vw" />
+      &nbsp; &nbsp;
+      <p class="cursor--pointer mb-2 me-2">View All &nbsp;</p>
+      <img class="right-arrow" src="./assets/common/blogs-left-arrow.svg" alt="" />
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="d-none" #youtubePlayerWrapper>
+      <youtube-player videoId="cXlxMP9PU8I" #youtubePlayer [width]="200" [height]="200"></youtube-player>
+
+      <br />
+    </div>
+  </div>
+  <section class="pt-5 pb-5">
+    <div class="container-fluid p-0">
+      <div class="swiper-block">
+        <div class="p-0 VideoslideContainer">
+          <!-- Swiper -->
+          <div class="swiper-container animate-words-from-customers-carousel">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide mobile-look" *ngFor="let video of testimonialVideos">
+                <div class="video-container">
+                  <iframe class="responsive-video" [src]="video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container-fluid SIXTHSECTION p-0">
+  <div class="blog-wrapper">
+    <div class="Blog-headding desktop" style="overflow: hidden">
+      <h1 class="desktop-animate-blogs-headding">Blogs</h1>
+    </div>
+    <div class="Blog-headding mobile">
+      <h1>News & Blogs</h1>
+    </div>
+    <div class="view-all animate-Blogs-view-all d-flex" style="opacity: 0.699999988079071">
+      <hr style="width: 20vw" />
+      <a style="text-decoration: none" routerLink="/blogs-listing">
+        &nbsp;&nbsp;
+        <span style="color: black; opacity: 0.7" class="mb-2 me-2">View All
+        </span>
+        <img class="right-arrow" src="./assets/common/blogs-left-arrow.svg" alt="" />
+      </a>
+    </div>
+  </div>
+  <section class="pt-5 pb-5 blogs">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="swiper-block">
+            <div class="container-fluid slideContainer p-0">
+              <!-- Swiper -->
+              <div class="swiper-container swiper-container-Blog">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide BlogSlide" *ngFor="let post of Blogslide" [style]="
+                      'background: url(' +
+                      post.thumb +
+                      '), linear-gradient(rgb(0 0 0 / 82%), rgba(0, 0, 0, 0.9))'
+                    ">
+                    <div class="d-flex flex-column text-white h-100 align-items-baseline">
+                      <!-- <span class="">{{ post.date | date }}</span> -->
+                      <span class="mt-auto" style="font-size: 26px">{{
+                        post.title
+                        }}</span>
+                      <a routerLink="/blog/{{ post._id }}">
+                        <button class="btn btn-outline mt-4 blog-button">
+                          Know More
+                          <span class="arrowright">
+                            <img src="./assets/common/blogs-arrow.svg" alt="" /></span>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-none blogs-arrows col-6 mt-5 d-flex align-items-center gap-2">
+          <a class="prev mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+            <img src="./assets/common/blogs-left-arrow.svg" alt="" />
+          </a>
+          <a class="next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+            <img class="right-arrow" src="./assets/common/blogs-left-arrow.svg" alt="" />
+          </a>
+          <div class="pagniation hr d-flex align-items-center gap-2">
+            <hr style="width: 20vw" />
+            <span>1 - 04</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT SECTION  -->
+<form [formGroup]="leadData" >
+<div class="container-fluid mt-5 contact-portion">
+  <div class="row">
+    <div class="contactText col-lg-4">
+      <div style="overflow: hidden">
+        <h1 class="text-center contact-us-animate">
+          Contact <span class="contact-us"> Us</span>
+        </h1>
+      </div>
+      <p>Lets Take the first steps</p>
+    </div>
+
+    <div class="col-lg-8 contactInput" style="overflow: hidden">
+      <div class="animate-input" style="display: inline-block">
+        <div class="firstTwoInputs">
+          <div class="mt-5 inputSpacing">
+            <label for="">NAME*</label>
+            <input formControlName="Name" type="text" class="form-control" required
+              placeholder="Your Name here" />
+
+              <div class="errorMsg" *ngIf="leadData.controls['Name'].invalid && (leadData.controls['Name'].dirty || leadData.controls['Name'].touched)">
+                <div *ngIf="leadData.controls['Name'].errors?.['pattern']">Name is incorrect.</div>
+                <div *ngIf="leadData.controls['Name'].errors?.['required']">Name is required.</div>
+              </div>
+          </div>
+          <div class="mt-5 mobile-input">
+            <label for="">MOBILE NUMBER*</label>
+            <input type="text" formControlName="Phone" required class="form-control"
+              placeholder="Your Mobile Number here" />
+              <div class="errorMsg" *ngIf="leadData.controls['Phone'].invalid && (leadData.controls['Phone'].dirty || leadData.controls['Phone'].touched)">
+                <div *ngIf="leadData.controls['Phone'].errors?.['required']">Phone number is required.</div>
+                <div *ngIf="leadData.controls['Phone'].errors?.['pattern']">Phone number must be a 10-digit number.</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="mt-4 EmailInput">
+          <label for="">EMAIL ID*</label>
+          <input type="email" required formControlName="Email" class="form-control"
+            placeholder="Your Email here" />
+            <div class="errorMsg" style="padding-left: 5%;" *ngIf="leadData.controls['Email'].invalid && (leadData.controls['Email'].dirty || leadData.controls['Email'].touched)">
+              <div *ngIf="leadData.controls['Email'].errors?.['email']">Email id is incorrect.</div>
+              <div *ngIf="leadData.controls['Email'].errors?.['required']">Email id is required.</div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-lg-3 simplify">
+            <p> Let’s simplify the
+                purchase of your first house</p>
+
+        </div> -->
+    <div class="letSimplifyTab" style="overflow: hidden">
+      <div class="simplify col-xl-6 lets-simplify-animate">
+        <div class="col-6">Let’s simplify the</div>
+        <div class="col-8">purchase of your first house</div>
+      </div>
+    </div>
+
+    <div class="letsconnect col-lg-12 cursor--pointer" (click)="connect()">
+      <div style="overflow: hidden">
+        <img src="assets/home/connectArrow.png" alt="" class="letsconnect-arrow" style="z-index: 999" />
+      </div>
+      <h1 class="text-center desktop-animate-lets-connect">Let’s Connect</h1>
+      <p>Let’s</p>
+      <p>Connect</p>
+    </div>
+  </div>
+</div>
+
+</form>

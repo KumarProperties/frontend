@@ -1,0 +1,457 @@
+/* Default styles for desktop view */
+@media screen and (max-height: 800px) and (min-width: 1050px) {
+  .mainDiv {
+    padding-top: 8% !important;
+  }
+  .mb-4 {
+    margin-bottom: 1.2rem !important;
+  }
+}
+.errorMsg {
+  color: red;
+  padding-left: 10%;
+  padding-top: 1%;
+}
+.modal-content {
+  background: url("src/assets/common/kumar-bg.png");
+
+  background-size: 100%;
+  background-blend-mode: soft-light;
+}
+
+li,
+input {
+  font-family: "metropolis";
+
+  padding-left: 5%;
+}
+#drop_zone {
+  border: 5px solid blue;
+  width: 200px;
+  height: 100px;
+}
+
+.form-label {
+  font-family: "metropolis";
+  padding-left: 5%;
+  margin-right: 1rem;
+}
+
+.modal-headding {
+  color: var(--primary, #f27f0c);
+  font-family: Alido;
+  font-size: 3.4vw;
+  font-style: normal;
+  font-weight: 400;
+}
+.close-btn {
+  position: absolute;
+  top: 5%;
+  right: 8.7%;
+}
+.modal-text {
+  color: #000;
+  font-family: Metropolis;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 500;
+
+  width: 85%;
+}
+
+.form-outline input {
+  border-radius: 100px;
+  border: 1px solid rgba(1, 18, 26, 0.5);
+  background: var(--secondary, #faf6f0);
+
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.submit-form {
+  border-radius: 100px;
+  background: var(--primary, #f27f0c);
+  flex-shrink: 0;
+  padding: 0.9rem 3.5rem;
+  color: var(--secondary, #faf6f0);
+  text-align: center;
+  font-family: Metropolis;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 7%;
+}
+.titleDiv {
+  margin-bottom: 10%;
+}
+.mainDiv {
+  padding-top: 10%;
+  margin: 0 8%;
+}
+
+@media screen and (min-width: 1000px) {
+  .paddings {
+    padding-left: 5%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mainDiv {
+    padding-top: 15%;
+  }
+  .submit-form {
+    font-size: 3vw;
+  }
+  .text {
+    margin-left: 2%;
+    margin-bottom: 6%;
+  }
+  .titleDiv {
+    margin-bottom: 0;
+  }
+  .modal-text {
+    font-size: 2.2vw;
+  }
+  .modal-headding {
+    font-size: 5.4vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form-label {
+    font-size: 3.8vw !important;
+  }
+}
+
+.dropdown__switch:checked + .dropdown__options-filter .dropdown__select {
+  transform: scaleY(1);
+}
+.dropdown__switch:checked + .dropdown__options-filter .dropdown__filter:after {
+  transform: rotate(-135deg);
+}
+.dropdown__options-filter {
+  width: 100%;
+  cursor: pointer;
+}
+.dropdown__filter {
+  position: relative;
+  display: flex;
+  padding: 17.5px;
+  color: #595959;
+  background: var(--secondary, #faf6f0);
+  border: 1px solid #a09c9c;
+  border-radius: 30px;
+
+  transition: 0.3s;
+  list-style: none;
+}
+.dropdown__filter:focus {
+  border: 1px solid #918ff4;
+  outline: none;
+  box-shadow: 0 0 5px 3px #918ff4;
+}
+.dropdown__filter::after {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #595959;
+  border-bottom: 2px solid #595959;
+  transform: rotate(45deg) translateX(-45%);
+  transition: 0.2s ease-in-out;
+}
+.dropdown__select {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  height: 14.7vw;
+  margin-top: 5px;
+  overflow: scroll;
+  transform: scaleY(0);
+  transform-origin: top;
+  font-weight: 300;
+  transition: 0.2s ease-in-out;
+  border-radius: 50px;
+  background: var(--secondary, #faf6f0);
+}
+.dropdown__select-option {
+  padding: 20px;
+  background: var(--secondary, #faf6f0);
+  border-bottom: 1px solid #d6d6d6;
+  transition: 0.3s;
+  text-align: center;
+}
+.dropdown__select-option:last-of-type {
+  border-bottom: 0;
+}
+.dropdown__select-option:hover {
+  background-color: #f9f9f9;
+}
+
+/*  */
+.headding {
+  margin-top: 3vw;
+}
+
+.resume-wrapper {
+  border: 1px solid;
+  border-radius: 2rem;
+  background: #fff;
+  cursor: pointer;
+  padding: 0.675rem;
+}
+.resume-input-wrapper {
+  background-color: #f5ede2;
+  display: flex;
+  padding: 4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+}
+
+.headding p {
+  font-family: "alido";
+  font-style: normal;
+  font-size: 5vw;
+  line-height: 5vw;
+  text-align: center;
+  padding-bottom: 2rem;
+  color: #f27f0c;
+}
+
+.paragraph p {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  width: 60vw;
+  margin: auto;
+}
+
+.accordion-button::after {
+  background-image: url("src/assets/career/plus.svg");
+  background-color: transparent;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("src/assets/career/minus.svg");
+  background-color: transparent;
+}
+
+.expernce {
+  border-top: 1px solid rgba(51, 51, 51, 0.3);
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875vw;
+  color: #333333;
+  padding: 2vw;
+  padding-left: 6vw;
+}
+
+@media screen and (max-width: 767px) {
+  .expernce {
+    font-size: 3vw !important;
+  }
+  .expernce span {
+    font-size: 2.875vw !important;
+  }
+  .accordion-button {
+    font-size: 3vw !important;
+  }
+}
+
+.expernce1 {
+  border-top: 1.5px solid rgba(51, 51, 51, 0.7);
+}
+
+.accordion-body p img {
+  margin-right: 1.8rem;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+
+.expernce span {
+  padding-top: 1rem;
+  font-weight: 500;
+  font-size: 0.9vw;
+  display: flex;
+  align-items: center;
+  color: rgba(51, 51, 51, 0.7);
+  padding-left: 4rem;
+}
+
+.expernce button {
+  background: #f27f0c;
+  border-radius: 100px;
+  color: white;
+  padding: 0.675rem 3.5rem;
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.accordion-button {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1vw;
+  line-height: 32px;
+  color: #333333;
+  border-radius: 0.875rem;
+  padding: 1.875rem 5vw;
+}
+.accordion {
+  box-shadow: 4px 4px 8px 0px #00000012;
+}
+
+.accordion-item,
+.accordion-item h2,
+.accordion-button,
+.accordion {
+  background-color: #faf6f0;
+  border: none;
+  border-radius: 0.675rem !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #faf6f0;
+  border-color: transparent;
+}
+
+.accordion-button {
+  background: #faf6f0;
+}
+
+.accordion-body {
+  background: #faf6f0;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button::after {
+  width: 1.7rem !important;
+  height: 1.7rem !important;
+  background-size: 1.7rem !important;
+}
+
+.accordion-item {
+  margin-bottom: 0.7vw;
+}
+
+/* Media Queries */
+
+/* Small screens (320px - 479px) */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .headding p {
+    font-size: 7vw;
+    line-height: 6vw;
+    padding-top: 3.5vw;
+  }
+
+  .paragraph p {
+    font-size: 2.5vw;
+    line-height: 3.2vw;
+  }
+
+  .expernce {
+    font-size: 2.3vw;
+    padding: 5vw;
+  }
+
+  .expernce span {
+    font-size: 2.1vw;
+    padding-left: 12vw;
+  }
+
+  .accordion-button {
+    font-size: 3.5vw;
+    padding-left: 2vw;
+  }
+
+  .expernce button {
+    width: 60%;
+    font-size: 4vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 2vw;
+    padding-top: 2vw;
+  }
+}
+
+/* Medium screens (480px - 767px) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .headding p {
+    font-size: 4.7vw;
+  }
+
+  .paragraph p {
+    font-size: 2.2vw;
+    line-height: 3vw;
+  }
+
+  .expernce {
+    font-size: 1.8vw;
+    padding: 4vw;
+    padding-left: 4vw;
+  }
+
+  .expernce span {
+    font-size: 1.9vw;
+    padding-left: 7.9vw;
+  }
+
+  .accordion-button {
+    font-size: 2.5vw;
+    padding-left: 3vw;
+  }
+
+  .expernce button {
+    width: 50%;
+    font-size: 3.5vw;
+  }
+}
+
+/* Large screens (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .paragraph p {
+    font-size: 1.8vw;
+    line-height: 3vw;
+  }
+
+  .expernce {
+    font-size: 1.6vw;
+    padding: 3vw;
+    padding-left: 3vw;
+  }
+
+  .expernce span {
+    font-size: 1.5vw;
+  }
+
+  .accordion-button {
+    font-size: 1.8vw;
+    padding-left: 2vw;
+  }
+
+  .expernce button {
+    width: 25%;
+    font-size: 2vw;
+  }
+}
+
+/* Extra large screens (992px and above) - No changes needed */

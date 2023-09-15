@@ -1,0 +1,49 @@
+.margins {
+  margin: 0 7%;
+  margin-bottom: 10% !important;
+}
+
+.title span {
+  font-family: "alido";
+  color: #f27f0c;
+  text-transform: uppercase;
+  font-size: 6vw;
+  display: inline-block;
+}
+
+.title {
+  margin-top: 5%;
+  margin-bottom: 4%;
+  text-align: center;
+  overflow: hidden;
+}
+.para1,
+.para2 {
+  overflow: hidden;
+}
+
+.para1 p,
+.para2 p {
+  text-align: justify;
+  font-family: "Metropolis";
+  font-size: 1.16vw;
+  color: #333333;
+}
+
+.text {
+  margin: 0 10%;
+}
+
+@media screen and (max-width: 767px) {
+  .title span {
+    font-size: 9vw;
+  }
+  .text {
+    margin: 0;
+  }
+
+  .para1 p,
+  .para2 p {
+    font-size: 3vw;
+  }
+}

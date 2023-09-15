@@ -1,0 +1,103 @@
+
+
+<div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  data-bs-backdrop="true" data-bs-keyboard="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="assets/icons/cross-icon.svg" alt="" (click)="close()" type="button" class="close-btn"
+          data-bs-dismiss="modal" />
+        <div class="mainDiv">
+          <div style="align-items: center;">
+            <div class="text ">
+              <div class="titleDiv">
+                <h1 class="modal-headding">Please fill in the details</h1>
+              </div>
+              <div>
+                <p class="modal-text d-none">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </div>
+            <div class=" paddings">
+              <form [formGroup]="enquireForm" (ngSubmit)="submitEnquireForm()">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <label class="form-label" style="padding-left: 10%" for="form6Example1">Your Name*</label>
+                      <input formControlName="Name" type="text" id="form6Example1" class="form-control"
+                        style="padding-left: 9%" placeholder="Your name here" ng-required="true" />
+                        <div class="errorMsg" *ngIf="enquireForm.controls['Name'].invalid && (enquireForm.controls['Name'].dirty || enquireForm.controls['Name'].touched)">
+                          <div *ngIf="enquireForm.controls['Name'].errors?.['pattern']">Name is incorrect.</div>
+                          <div *ngIf="enquireForm.controls['Name'].errors?.['required']">Name is required.</div>
+
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <!-- Number input -->
+                    <div class="form-outline">
+                      <label class="form-label" style="padding-left: 10%" for="form6Example6">Phone Number*</label>
+                      <input formControlName="Phone" type="tel" id="form6Example6" class="form-control"
+                        placeholder="+91" style="padding-left: 9%" ng-required="true" />
+
+                        <div class="errorMsg" *ngIf="enquireForm.controls['Phone'].invalid && (enquireForm.controls['Phone'].dirty || enquireForm.controls['Phone'].touched)">
+                          <div *ngIf="enquireForm.controls['Phone'].errors?.['required']">Phone number is required.</div>
+                          <div *ngIf="enquireForm.controls['Phone'].errors?.['pattern']">Phone number must be a 10-digit number.</div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example5">Email ID*</label>
+                  <input formControlName="Email" type="email" id="form6Example5" class="form-control"
+                    placeholder="Your Email here"  />
+                    <div class="errorMsg" style="padding-left: 5%;" *ngIf="enquireForm.controls['Email'].invalid && (enquireForm.controls['Email'].dirty || enquireForm.controls['Email'].touched)">
+                      <div *ngIf="enquireForm.controls['Email'].errors?.['email']">Email id is incorrect.</div>
+                      <div *ngIf="enquireForm.controls['Email'].errors?.['required']">Email id is required.</div>
+
+                    </div>
+                </div>
+                <div class="dropdown mb-4">
+                  <label class="form-label" for="form6Example5">Project*</label>
+                  <label for="filter-switch" class="dropdown__options-filter">
+                    <ul class="dropdown__filter position-relative" role="listbox" tabindex="-1"
+                      (click)="openProjects()">
+                      <li class="dropdown__filter-selected " aria-selected="true" style="padding-left: 2%">
+                        {{selectedProject}}
+                      </li>
+                      <input type="checkbox" formControlName="Project" class="dropdown__switch position-absolute top-0 bottom-0 left-0 right-0 form-control"
+                        id="filter-switch-project" hidden />
+                      <ul *ngIf="title == ''" class="dropdown__select">
+                        <li class="dropdown__select-option" *ngFor="let project of projects" role="option"
+                          (click)="selectProject(project.title)">
+                          {{project.title}}
+                        </li>
+                      </ul>
+                    </ul>
+                  </label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example4">Message</label>
+                  <input formControlName="Remarks" type="text" id="form6Example4" class="form-control"
+                    placeholder="Message" />
+                </div>
+                <div style="text-align: center;">
+                  <button   type="submit" class="btn btn-warning btn-block mb-4 text-white submit-form">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
